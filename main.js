@@ -119,6 +119,10 @@
     .kpi-vs {
       font-size: 11px; font-weight: 500; color: #94a3b8; margin-bottom: 18px;
     }
+    .consecutive-warning {
+      font-size: 11px; color: #92400e; background: #fef3c7; border: 1px solid #fde68a;
+      border-radius: 6px; padding: 6px 10px; margin-bottom: 14px;
+    }
 
     /* ── NARRATIVE ── */
     .narrative-block {
@@ -322,7 +326,7 @@
     const slash = s.lastIndexOf('/');
     if (slash >= 0 && slash < s.length - 1) s = s.slice(slash + 1);
     if (s.endsWith('_SH')) s = s.slice(0, -3);
-    if (s === s.toUpperCase() && s.length > 1) s = s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+    if (s === s.toUpperCase() && s.length > 4) s = s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
     return s.trim() || '(Unassigned)';
   }
 
@@ -373,7 +377,274 @@
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
 
-  /* ─── PARSE ─────────────────────────────────────────────────────────────── */
+  /* ─── V3 TIME HELPERS ───────────────────────────────────────────────────── */
+
+  const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  function extractYearOnly(id) {
+    const s = String(id ?? '').trim();
+    if (!/^\d{4}$/.test(s)) return null;
+    const y = parseInt(s, 10);
+    return (y >= 1900 && y <= 2200) ? y : null;
+  }
+
+  function extractYearMonth(id) {
+    const s = String(id ?? '').trim();
+    if (!/^\d{6}$/.test(s)) return null;
+    const year  = parseInt(s.slice(0, 4), 10);
+    const month = parseInt(s.slice(4, 6), 10);
+    if (month < 1 || month > 12) return null;
+    if (year < 1900 || year > 2200) return null;
+    return { year, month, key: s };
+  }
+
+  function formatPeriodSetLabel(monthNums, year) {
+    if (!monthNums || monthNums.length === 0) return String(year);
+    const sorted = [...monthNums].sort((a, b) => a - b);
+    if (sorted.length === 1) {
+      return `${MONTH_ABBR[sorted[0] - 1]} ${year}`;
+    }
+    const isContiguous = sorted.every((m, i) => i === 0 || m === sorted[i - 1] + 1);
+    if (isContiguous) {
+      return `${MONTH_ABBR[sorted[0] - 1]}–${MONTH_ABBR[sorted[sorted.length - 1] - 1]} ${year}`;
+    }
+    if (sorted.length <= 4) {
+      return sorted.map(m => MONTH_ABBR[m - 1]).join(', ') + ` ${year}`;
+    }
+    return `${sorted.length} periods in ${year}`;
+  }
+
+  // Detects whether timePeriod members are YYYY (year) or YYYYMM (year/month).
+  // Returns 'year' | 'yearmonth' | 'unsupported'
+  function detectTimeMode(realPeriods) {
+    const allYear      = realPeriods.every(id => extractYearOnly(id) !== null);
+    const allYearMonth = realPeriods.every(id => extractYearMonth(id) !== null);
+    if (allYear)      return 'year';
+    if (allYearMonth) return 'yearmonth';
+    return 'unsupported';
+  }
+
+  // ── Year Mode ──────────────────────────────────────────────────────────────
+  // timePeriod contains plain YYYY members. Simple year-vs-year comparison.
+  // Returns same shape as parseBindingYearMonth for consistent downstream handling.
+  function parseBindingYear(data, tpAlias, dimKeys, measKey) {
+    const yearIds = [...new Set(
+      data.map(r => r[tpAlias] && r[tpAlias].id).filter(Boolean)
+    )].filter(id => String(id) !== '@TotalMember');
+
+    const years = yearIds.map(id => extractYearOnly(id)).filter(Boolean).sort((a, b) => a - b);
+    if (years.length < 2) return { state: 'insufficient-years' };
+
+    const resolvedCur   = years[years.length - 1];
+    const resolvedPrior = years[years.length - 2];
+
+    // dimensions: Executive + optional Explanation (no time heuristic)
+    let dim1Key, dim2Key = null;
+    if (dimKeys.length === 0) return { state: 'no-data' };
+    if (dimKeys.length === 1) {
+      dim1Key = dimKeys[0];
+    } else if (dimKeys.length === 2) {
+      const counts = dimKeys.map(k => new Set(data.map(r => r[k] && r[k].id)).size);
+      const minIdx = counts.indexOf(Math.min(...counts));
+      dim1Key = dimKeys[minIdx];
+      dim2Key = dimKeys.find((_, i) => i !== minIdx) || null;
+    } else {
+      return { state: 'too-many-dims' };
+    }
+
+    const memberMap  = {};
+    const explainMap = {};
+
+    for (const row of data) {
+      const tp = row[tpAlias];
+      if (!tp || String(tp.id) === '@TotalMember') continue;
+      const rowYear = extractYearOnly(String(tp.id));
+      if (!rowYear) continue;
+
+      const mem1 = row[dim1Key];
+      if (!mem1 || String(mem1.id) === '@TotalMember') continue;
+
+      const measCell = row[measKey];
+      const val      = measCell && measCell.raw !== undefined ? Number(measCell.raw) : null;
+      const mem1Id   = String(mem1.id);
+
+      if (!memberMap[mem1Id]) memberMap[mem1Id] = { label: mem1.label || mem1.id, cur: null, prior: null };
+      if (rowYear === resolvedCur)   memberMap[mem1Id].cur   = (memberMap[mem1Id].cur   ?? 0) + (val ?? 0);
+      if (rowYear === resolvedPrior) memberMap[mem1Id].prior = (memberMap[mem1Id].prior ?? 0) + (val ?? 0);
+
+      if (dim2Key) {
+        const mem2 = row[dim2Key];
+        if (!mem2 || String(mem2.id) === '@TotalMember') continue;
+        const mem2Id = String(mem2.id);
+        if (!explainMap[mem1Id]) explainMap[mem1Id] = {};
+        if (!explainMap[mem1Id][mem2Id]) explainMap[mem1Id][mem2Id] = { label: mem2.label || mem2.id, cur: null, prior: null };
+        if (rowYear === resolvedCur)   explainMap[mem1Id][mem2Id].cur   = (explainMap[mem1Id][mem2Id].cur   ?? 0) + (val ?? 0);
+        if (rowYear === resolvedPrior) explainMap[mem1Id][mem2Id].prior = (explainMap[mem1Id][mem2Id].prior ?? 0) + (val ?? 0);
+      }
+    }
+
+    const members = Object.entries(memberMap).map(([id, info]) => {
+      const { cur, prior } = info;
+      const delta = (cur !== null && prior !== null) ? cur - prior
+                  : (cur !== null ? cur : prior !== null ? -prior : null);
+      return { id, label: cleanName(info.label), cur, prior, delta,
+               isNew: prior === null && cur !== null,
+               isLost: cur === null && prior !== null };
+    });
+
+    return {
+      state: 'ok',
+      members,
+      resolvedCur:   String(resolvedCur),
+      resolvedPrior: String(resolvedPrior),
+      curPeriodLabel:   String(resolvedCur),
+      priorPeriodLabel: String(resolvedPrior),
+      explainMap,
+      dim2Key,
+    };
+  }
+
+  // ── Year/Month Mode ────────────────────────────────────────────────────────
+  // Returns { state, members, resolvedCur, resolvedPrior, curPeriodLabel, priorPeriodLabel, explainMap, dim2Key }
+  // state: 'ok' | 'no-data' | 'unsupported' | 'no-overlap' | 'insufficient-years' | 'too-many-dims'
+  function parseBindingYearMonth(data, tpAlias, dimKeys, measKey, comparisonMode) {
+    const rawPeriods  = [...new Set(data.map(r => r[tpAlias] && r[tpAlias].id).filter(Boolean))];
+    const realPeriods = rawPeriods.filter(id => String(id) !== '@TotalMember');
+    if (realPeriods.length === 0) return { state: 'no-data' };
+
+    const parsed = realPeriods.map(id => extractYearMonth(id));
+    if (parsed.some(p => p === null)) return { state: 'unsupported' };
+
+    const years = [...new Set(parsed.map(p => p.year))].sort((a, b) => a - b);
+    if (years.length < 2) return { state: 'insufficient-years' };
+    const resolvedCur   = years[years.length - 1];
+    const resolvedPrior = years[years.length - 2];
+
+    const curMonths   = new Set(parsed.filter(p => p.year === resolvedCur).map(p => p.month));
+    const priorMonths = new Set(parsed.filter(p => p.year === resolvedPrior).map(p => p.month));
+
+    let curMatchMonths, priorMatchMonths;
+    const mode = comparisonMode === 'all-prior' ? 'all-prior' : 'same-period';
+    if (mode === 'same-period') {
+      const common = new Set([...curMonths].filter(m => priorMonths.has(m)));
+      if (common.size === 0) return { state: 'no-overlap' };
+      curMatchMonths   = common;
+      priorMatchMonths = common;
+    } else {
+      curMatchMonths   = curMonths;
+      priorMatchMonths = priorMonths;
+    }
+
+    // dimensions: Executive + optional Explanation (max 2, no time heuristic)
+    let dim1Key, dim2Key = null;
+    if (dimKeys.length === 0) return { state: 'no-data' };
+    if (dimKeys.length === 1) {
+      dim1Key = dimKeys[0];
+    } else if (dimKeys.length === 2) {
+      const counts = dimKeys.map(k => new Set(data.map(r => r[k] && r[k].id)).size);
+      const minIdx = counts.indexOf(Math.min(...counts));
+      dim1Key = dimKeys[minIdx];
+      dim2Key = dimKeys.find((_, i) => i !== minIdx) || null;
+    } else {
+      return { state: 'too-many-dims' };
+    }
+
+    const memberMap  = {};
+    const explainMap = {};
+
+    for (const row of data) {
+      const tp = row[tpAlias];
+      if (!tp) continue;
+      const tpId = String(tp.id);
+      if (tpId === '@TotalMember') continue;
+
+      const ym = extractYearMonth(tpId);
+      if (!ym) continue;
+
+      const mem1 = row[dim1Key];
+      if (!mem1 || String(mem1.id) === '@TotalMember') continue;
+
+      const measCell = row[measKey];
+      const val      = measCell && measCell.raw !== undefined ? Number(measCell.raw) : null;
+      const mem1Id   = String(mem1.id);
+
+      if (!memberMap[mem1Id]) memberMap[mem1Id] = { label: mem1.label || mem1.id, cur: null, prior: null };
+      if (ym.year === resolvedCur && curMatchMonths.has(ym.month))
+        memberMap[mem1Id].cur   = (memberMap[mem1Id].cur   ?? 0) + (val ?? 0);
+      else if (ym.year === resolvedPrior && priorMatchMonths.has(ym.month))
+        memberMap[mem1Id].prior = (memberMap[mem1Id].prior ?? 0) + (val ?? 0);
+
+      if (dim2Key) {
+        const mem2 = row[dim2Key];
+        if (!mem2 || String(mem2.id) === '@TotalMember') continue;
+        const mem2Id = String(mem2.id);
+        if (!explainMap[mem1Id]) explainMap[mem1Id] = {};
+        if (!explainMap[mem1Id][mem2Id]) explainMap[mem1Id][mem2Id] = { label: mem2.label || mem2.id, cur: null, prior: null };
+        if (ym.year === resolvedCur && curMatchMonths.has(ym.month))
+          explainMap[mem1Id][mem2Id].cur   = (explainMap[mem1Id][mem2Id].cur   ?? 0) + (val ?? 0);
+        else if (ym.year === resolvedPrior && priorMatchMonths.has(ym.month))
+          explainMap[mem1Id][mem2Id].prior = (explainMap[mem1Id][mem2Id].prior ?? 0) + (val ?? 0);
+      }
+    }
+
+    const members = Object.entries(memberMap).map(([id, info]) => {
+      const { cur, prior } = info;
+      const delta = (cur !== null && prior !== null) ? cur - prior
+                  : (cur !== null ? cur : prior !== null ? -prior : null);
+      return { id, label: cleanName(info.label), cur, prior, delta,
+               isNew: prior === null && cur !== null,
+               isLost: cur === null && prior !== null };
+    });
+
+    const curPeriodLabel   = formatPeriodSetLabel([...curMatchMonths],   resolvedCur);
+    const priorPeriodLabel = formatPeriodSetLabel([...priorMatchMonths], resolvedPrior);
+
+    return {
+      state: 'ok',
+      members,
+      resolvedCur:   String(resolvedCur),
+      resolvedPrior: String(resolvedPrior),
+      curPeriodLabel,
+      priorPeriodLabel,
+      explainMap,
+      dim2Key,
+    };
+  }
+
+  // ── Dispatcher ─────────────────────────────────────────────────────────────
+  function parseBindingTimePeriod(dataBinding, comparisonMode) {
+    const data  = dataBinding.data;
+    if (!data || data.length === 0) return { state: 'no-data' };
+
+    const meta  = dataBinding.metadata;
+    const feeds = meta && meta.feeds;
+    if (!feeds) return { state: 'no-data' };
+
+    const tpValues = feeds.timePeriod && feeds.timePeriod.values;
+    if (!tpValues || tpValues.length === 0) return { state: 'no-data' };
+    if (tpValues.length > 1) return { state: 'too-many-time-dims' };
+
+    const tpAlias  = tpValues[0];
+    const measKeys = Object.keys(data[0]).filter(k => k.startsWith('measures_'));
+    const dimKeys  = Object.keys(data[0]).filter(k => k.startsWith('dimensions_'));
+
+    if (measKeys.length < 1) return { state: 'no-data' };
+
+    const rawPeriods  = [...new Set(data.map(r => r[tpAlias] && r[tpAlias].id).filter(Boolean))];
+    const realPeriods = rawPeriods.filter(id => String(id) !== '@TotalMember');
+    if (realPeriods.length === 0) return { state: 'no-data' };
+
+    const timeMode = detectTimeMode(realPeriods);
+    if (timeMode === 'unsupported') return { state: 'unsupported' };
+
+    const measKey = measKeys[0];
+    if (timeMode === 'year') {
+      return parseBindingYear(data, tpAlias, dimKeys, measKey);
+    }
+    return parseBindingYearMonth(data, tpAlias, dimKeys, measKey, comparisonMode);
+  }
+
+  /* ─── PARSE (Legacy V2) ──────────────────────────────────────────────────── */
   // Supports 2 or 3 dimensions.
   // Time dim   = fewest unique values
   // Dim 1 (Executive Layer)   = second most unique values (or first non-time)
@@ -413,9 +684,10 @@
     }
     const measKey = measKeys[0];
 
-    const yearIds = [...new Set(data.map(r => r[timeDimKey] && String(r[timeDimKey].id)))].filter(Boolean);
+    const yearIds = [...new Set(data.map(r => r[timeDimKey] && String(r[timeDimKey].id)))].filter(y => y && y !== '@TotalMember');
 
     function matchYear(target) {
+      if (!target) return null;
       return yearIds.find(y => y === String(target))
           || yearIds.find(y => y.includes(String(target)))
           || null;
@@ -439,6 +711,9 @@
       const mem1    = row[dim1Key];
       const measCell = row[measKey];
       if (!mem1) continue;
+      // BW/4 delivers result/total rows with id "@TotalMember" — skip them to avoid double-counting
+      if (String(mem1.id) === '@TotalMember') continue;
+      if (yearId === '@TotalMember') continue;
       const mem1Id  = String(mem1.id);
       const val     = measCell && measCell.raw !== undefined ? Number(measCell.raw) : null;
 
@@ -451,6 +726,7 @@
       if (dim2Key) {
         const mem2 = row[dim2Key];
         if (!mem2) continue;
+        if (String(mem2.id) === '@TotalMember') continue;
         const mem2Id = String(mem2.id);
         if (!explainMap[mem1Id]) explainMap[mem1Id] = {};
         if (!explainMap[mem1Id][mem2Id]) explainMap[mem1Id][mem2Id] = { label: mem2.label || mem2.id, cur: null, prior: null };
@@ -469,6 +745,15 @@
     });
 
     return { members, resolvedCur, resolvedPrior, explainMap, dim2Key };
+  }
+
+  /* ─── CALENDAR YEAR HELPER ─────────────────────────────────────────────── */
+
+  function parseCalendarYear(value) {
+    const s = String(value ?? '').trim();
+    if (!/^\d{4}$/.test(s)) return null;
+    const y = Number(s);
+    return (y >= 1900 && y <= 2200) ? y : null;
   }
 
   /* ─── COMPUTE EXECUTIVE ─────────────────────────────────────────────────── */
@@ -507,12 +792,18 @@
     else if (adverse.length > 0) scenario = 'B';
     else scenario = 'C';
 
+    const curYearNum   = parseCalendarYear(curYear);
+    const priorYearNum = parseCalendarYear(priorYear);
+    const consecutiveWarning = (curYearNum !== null && priorYearNum !== null && curYearNum - priorYearNum !== 1)
+      ? `Executive Pulse is designed for consecutive calendar years. Current comparison: ${curYear} vs. ${priorYear}.`
+      : null;
+
     return {
       scenario, totalDelta, totalCur, totalPrior, totalPct,
       adverse, favorable, valid,
       totalAdverseImpact, totalFavorableImpact,
       breadth: adverse.length, total: valid.length, concentration,
-      unit, kpiLabel, dimLabel, curYear, priorYear, polarity,
+      unit, kpiLabel, dimLabel, curYear, priorYear, polarity, consecutiveWarning,
     };
   }
 
@@ -657,6 +948,7 @@
       this._shadow = this.attachShadow({ mode: 'open' });
       this._props = {};
       this._n = null;
+      this._v3StateMsg = null;
       this._narrativeParts = [];
       this._explainMap = null;
       this._dim2Key = null;
@@ -685,28 +977,110 @@
     onCustomWidgetResize(w, h) { this._applyScale(w, h); }
 
     _processBinding(dataBinding) {
-      const p = this._props;
-      const parsed = parseBinding(dataBinding, p.currentYear || '2026', p.priorYear || '2025');
-      if (!parsed) { this._n = null; this._render(); return; }
+      const meta  = dataBinding.metadata;
+      const feeds = meta && meta.feeds;
 
+      // Guard: early calls before SAC has built the full binding
+      if (!meta || !feeds) { this._n = null; this._render(); return; }
+
+      const data = dataBinding.data || [];
+
+      // Guard: calendar-time dimension in Analysis feed
+      // If any dimension in the 'dimensions' feed looks like a calendar-time dim
+      // (all real member IDs match YYYY or YYYYMM), the binding is invalid.
+      if (data.length > 0) {
+        const firstRow = data[0];
+        const dimKeys  = Object.keys(firstRow).filter(k => k.startsWith('dimensions_'));
+        for (const dk of dimKeys) {
+          const ids = [...new Set(data.map(r => r[dk] && r[dk].id).filter(Boolean))]
+            .filter(id => String(id) !== '@TotalMember');
+          if (ids.length === 0) continue;
+          const allYear      = ids.every(id => extractYearOnly(id) !== null);
+          const allYearMonth = ids.every(id => extractYearMonth(id) !== null);
+          if (allYear || allYearMonth) {
+            this._n = null;
+            this._v3StateMsg = 'Calendar Year or Year/Month must be assigned to the Time binding.';
+            this._render();
+            return;
+          }
+        }
+      }
+
+      const p = this._props;
+      const tpBound = feeds.timePeriod && feeds.timePeriod.values && feeds.timePeriod.values.length > 0;
+
+      if (tpBound) {
+        // V3 path — time comes exclusively from timePeriod feed
+        const mode   = p.comparisonMode || 'same-period';
+        const parsed = parseBindingTimePeriod(dataBinding, mode);
+
+        if (parsed.state !== 'ok') {
+          this._n = null;
+          this._v3StateMsg = this._v3StateMessage(parsed.state);
+          this._render();
+          return;
+        }
+        this._v3StateMsg = null;
+
+        this._n = compute(
+          parsed.members,
+          p.kpiPolarity || 'higher-is-better',
+          p.kpiUnit     || '',
+          p.kpiLabel    || 'Revenue',
+          p.dimLabel    || 'Segment',
+          parsed.curPeriodLabel,
+          parsed.priorPeriodLabel,
+        );
+        this._narrativeParts = buildNarrative(this._n);
+        this._explainMap     = parsed.explainMap;
+        this._dim2Key        = parsed.dim2Key;
+        this._focusMember    = this._n && this._n.adverse.length > 0
+          ? this._n.adverse[0]
+          : (this._n && this._n.valid.length > 0 ? this._n.valid[0] : null);
+        this._activeChip = null;
+        this._render();
+        return;
+      }
+
+      // Legacy V2 path — unmodified
+      const parsed = parseBinding(dataBinding, p.currentYear || '', p.priorYear || '');
+      if (!parsed) { this._n = null; this._v3StateMsg = null; this._render(); return; }
+
+      this._v3StateMsg = null;
       this._n = compute(
         parsed.members,
         p.kpiPolarity || 'higher-is-better',
-        p.kpiUnit || '',
-        p.kpiLabel || 'Revenue',
-        p.dimLabel || 'Segment',
-        parsed.resolvedCur  || p.currentYear || '2026',
-        parsed.resolvedPrior || p.priorYear  || '2025'
+        p.kpiUnit     || '',
+        p.kpiLabel    || 'Revenue',
+        p.dimLabel    || 'Segment',
+        parsed.resolvedCur   || p.currentYear || '',
+        parsed.resolvedPrior || p.priorYear   || '',
       );
       this._narrativeParts = buildNarrative(this._n);
       this._explainMap     = parsed.explainMap;
       this._dim2Key        = parsed.dim2Key;
-      // Default focus = biggest adverse contributor (or first valid member)
       this._focusMember    = this._n && this._n.adverse.length > 0
         ? this._n.adverse[0]
         : (this._n && this._n.valid.length > 0 ? this._n.valid[0] : null);
       this._activeChip = null;
       this._render();
+    }
+
+    _v3StateMessage(state) {
+      switch (state) {
+        case 'unsupported':
+          return 'Time period format not recognized. Please use a calendar year (0CALYEAR) or calendar year/month dimension (0CALMONTH).';
+        case 'no-overlap':
+          return 'No overlapping periods found between current and prior year. Check your time period binding.';
+        case 'insufficient-years':
+          return 'At least two calendar years are required for comparison. Check your time period binding.';
+        case 'too-many-time-dims':
+          return 'Please use only one time dimension: Calendar Year or Calendar Year/Month.';
+        case 'too-many-dims':
+          return 'Only one or two analysis dimensions are supported. Please remove extra dimensions from the binding.';
+        default:
+          return 'Add a measure and dimensions in the Data tab.';
+      }
     }
 
     _setupRO() {
@@ -757,12 +1131,14 @@
 
     _renderContent() {
       const n = this._n;
+      const stateMsg = this._v3StateMsg
+        || (n ? null : 'Add a measure and dimensions in the Data tab.');
       this._shadow.innerHTML = `<style>${CSS}</style>
         <div class="scale-host">
           <div class="scale-inner">
             <div class="pulse-root" id="pulse-root">
               <div class="accent-line" id="accent-line"></div>
-              ${n ? this._renderHero(n) : '<div class="state-msg">Add a measure and two dimensions in the Data tab</div>'}
+              ${n ? this._renderHero(n) : `<div class="state-msg">${stateMsg}</div>`}
               ${this._renderChart(n)}
               <div class="evidence" id="evidence-card"></div>
               ${this._renderExplanation()}
@@ -826,8 +1202,10 @@
               <div class="kpi-value">${fmtAbs(n.totalCur, n.unit)}</div>
               <div class="kpi-delta-badge ${totalCls}">${arrow} ${fmtAbs(Math.abs(n.totalDelta), n.unit)}${pctStr ? ' · ' + pctStr : ''}</div>
             </div>
-            <div class="kpi-vs">vs. ${n.priorYear}</div>
+            <div class="kpi-vs">${n.curYear} vs. ${n.priorYear}</div>
           </div>
+
+          ${n.consecutiveWarning ? `<div class="consecutive-warning">${n.consecutiveWarning}</div>` : ''}
 
           <div class="narrative-block">
             <div class="narrative-text">${parts}</div>
@@ -1082,6 +1460,8 @@
         }
         es.classList.add('visible');
         this._applyScale(this.getBoundingClientRect().width || 640);
+        // Re-apply after CSS transition completes (explanation-section transition = 0.6s)
+        setTimeout(() => this._applyScale(this.getBoundingClientRect().width || 640), 700);
       }, 250);
     }
 

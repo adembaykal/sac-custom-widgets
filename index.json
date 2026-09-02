@@ -1,6 +1,6 @@
 {
   "id": "com.custom.sac.executivepulse",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "name": "Executive Pulse",
   "description": "Deterministic narrative engine: finds the biggest adverse contributor across one analysis dimension, renders a 3-step animated build-up with inline evidence. No AI/LLM required.",
   "newInstancePrefix": "Pulse",
@@ -32,22 +32,27 @@
     "kpiPolarity": {
       "type": "string",
       "default": "higher-is-better",
-      "description": "higher-is-better (Revenue) or lower-is-better (Costs, Defects)"
+      "description": "higher-is-better (Revenue) or lower-is-better (e.g. defect rates)"
     },
     "currentYear": {
       "type": "string",
-      "default": "2026",
-      "description": "Label for the current period (e.g. 2026)"
+      "default": "",
+      "description": "Label for the current period (e.g. 2026). Leave empty to auto-resolve the most recent available period."
     },
     "priorYear": {
       "type": "string",
-      "default": "2025",
-      "description": "Label for the prior period (e.g. 2025)"
+      "default": "",
+      "description": "Label for the prior period (e.g. 2025). Leave empty to auto-resolve the second most recent available period."
     },
     "dimLabel": {
       "type": "string",
       "default": "Segment",
       "description": "Display label for the analysis dimension (e.g. Region, Product, Channel)"
+    },
+    "comparisonMode": {
+      "type": "string",
+      "default": "same-period",
+      "description": "Time comparison mode (requires Time binding): 'same-period' = same calendar months in both years · 'all-prior' = current periods vs. all available prior-year periods"
     }
   },
   "dataBindings": {
@@ -60,7 +65,12 @@
         },
         {
           "id": "dimensions",
-          "description": "1 time dim (Year) · 1 executive dim (e.g. Product Line) · 1 explanation dim (e.g. Country, optional)",
+          "description": "Analysis dimensions (e.g. Region, Segment)",
+          "type": "dimension"
+        },
+        {
+          "id": "timePeriod",
+          "description": "Time: Calendar Year or Year/Month (e.g. 0CALYEAR / 0CALMONTH)",
           "type": "dimension"
         }
       ]

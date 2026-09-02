@@ -34,7 +34,7 @@ The widget uses predefined deterministic rules applied to the bound data at runt
 2. In SAC: **Files → Upload** → select the ZIP
 3. Add the widget to a story page
 4. Bind your data using the SAC Custom Widget data binding panel
-5. Set the properties (KPI label, unit, polarity, period labels)
+5. Set the properties (KPI label, unit, polarity)
 
 Refer to the SAC documentation for Custom Widget upload and data binding.
 
@@ -42,14 +42,45 @@ Refer to the SAC documentation for Custom Widget upload and data binding.
 
 ## Required Data Binding
 
-One data binding with the following feeds:
+One data binding with three feeds:
 
-- **1 KPI measure** (e.g. Revenue)
-- **1 time dimension** (e.g. Year) — must have exactly 2 members (current + prior period)
-- **1 analysis dimension** (e.g. Product Line, Region)
-- **1 explanation dimension** *(optional)* — second breakdown dimension
+| Feed | Required | Description |
+|------|----------|-------------|
+| **Measures** | Yes | Exactly one KPI measure (e.g. Revenue) |
+| **Analysis dimensions** | Yes | 1 or 2 dimensions (e.g. Region, Product). Calendar Year and Calendar Year/Month must **not** be placed here. |
+| **Time** | Yes | Exactly one time dimension: Calendar Year (`0CALYEAR`) or Calendar Year/Month (`0CALMONTH`) |
 
-Works with compatible SAP Analytics Cloud data bindings.
+The data must contain at least two distinct calendar years. If only one year is present the widget shows a setup message.
+
+---
+
+## Time Comparison
+
+**Calendar Year (`0CALYEAR`):** Year-over-year comparison. Labels show `2026 vs. 2025`.
+
+**Calendar Year/Month (`0CALMONTH`):** Period-set comparison using only the months actually delivered by the data. No YTD inference, no automatic gap filling. Labels reflect the actual period range (e.g. `Jan–Sep 2026 vs. Jan–Sep 2025`).
+
+**Comparison modes** (property `comparisonMode`):
+
+| Mode | Behavior |
+|------|----------|
+| `same-period` *(default)* | Intersects current and prior year months. Only months present in both years are compared. |
+| `all-prior` | Current year all delivered months vs. prior year all delivered months. |
+
+**BW/4 Live Queries:** Result rows (`@TotalMember`) are filtered automatically. Ensure your query delivers individual member rows.
+
+---
+
+## Not supported
+
+- Fiscal Year / Fiscal Period
+- Calendar Week
+- Non-calendar time characteristics
+- More than two analysis dimensions
+- More than one time dimension in the Time feed
+- Calendar Year or Year/Month placed in the Analysis dimensions feed
+
+If an unsupported configuration is detected, Executive Pulse shows a setup message instead of rendering.
 
 ---
 
@@ -60,16 +91,16 @@ Works with compatible SAP Analytics Cloud data bindings.
 | `kpiLabel` | `Revenue` | KPI name shown in the narrative |
 | `kpiUnit` | *(empty)* | Unit prefix, e.g. `€` or `$` |
 | `kpiPolarity` | `higher-is-better` | Use `lower-is-better` for Costs, Defects |
-| `currentYear` | `2026` | Label for the current period |
-| `priorYear` | `2025` | Label for the prior period |
 | `dimLabel` | `Segment` | Display label for the analysis dimension |
+| `comparisonMode` | `same-period` | See Time Comparison above |
+| `currentYear` | *(empty)* | Legacy: manual period label override |
+| `priorYear` | *(empty)* | Legacy: manual period label override |
 
 ---
 
 ## Limitations
 
 - Designed for additive KPIs where member deltas can be aggregated meaningfully
-- Time dimension must contain exactly 2 periods (current and prior)
 - Tested in SAC; behavior in other environments is not guaranteed
 
 ---
