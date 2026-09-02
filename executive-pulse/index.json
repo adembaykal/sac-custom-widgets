@@ -1,0 +1,81 @@
+{
+  "id": "com.custom.sac.executivepulse",
+  "version": "3.0.0",
+  "name": "Executive Pulse",
+  "description": "Deterministic narrative engine: finds the biggest adverse contributor across one analysis dimension, renders a 3-step animated build-up with inline evidence. No AI/LLM required.",
+  "newInstancePrefix": "Pulse",
+  "icon": "",
+  "vendor": "Custom",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-sac-executivepulse",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "kpiLabel": {
+      "type": "string",
+      "default": "Revenue",
+      "description": "KPI name shown in the narrative (e.g. Revenue, Costs)"
+    },
+    "kpiUnit": {
+      "type": "string",
+      "default": "",
+      "description": "Unit prefix for values (e.g. € or $). Leave empty for none."
+    },
+    "kpiPolarity": {
+      "type": "string",
+      "default": "higher-is-better",
+      "description": "higher-is-better (Revenue) or lower-is-better (e.g. defect rates)"
+    },
+    "currentYear": {
+      "type": "string",
+      "default": "",
+      "description": "Label for the current period (e.g. 2026). Leave empty to auto-resolve the most recent available period."
+    },
+    "priorYear": {
+      "type": "string",
+      "default": "",
+      "description": "Label for the prior period (e.g. 2025). Leave empty to auto-resolve the second most recent available period."
+    },
+    "dimLabel": {
+      "type": "string",
+      "default": "Segment",
+      "description": "Display label for the analysis dimension (e.g. Region, Product, Channel)"
+    },
+    "comparisonMode": {
+      "type": "string",
+      "default": "same-period",
+      "description": "Time comparison mode (requires Time binding): 'same-period' = same calendar months in both years · 'all-prior' = current periods vs. all available prior-year periods"
+    }
+  },
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "KPI Measure (e.g. Revenue)",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "dimensions",
+          "description": "Analysis dimensions (e.g. Region, Segment)",
+          "type": "dimension"
+        },
+        {
+          "id": "timePeriod",
+          "description": "Time: Calendar Year or Year/Month (e.g. 0CALYEAR / 0CALMONTH)",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {}
+}
