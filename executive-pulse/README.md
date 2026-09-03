@@ -116,6 +116,8 @@ If an unsupported configuration is detected, Executive Pulse shows a setup messa
 
 ## Properties
 
+Note: The properties listed below are currently defined in the widget manifest and documented here, but they are not yet exposed as dedicated controls in the SAC Styling panel. Dedicated Styling/Properties controls are planned for Executive Pulse v4.
+
 | Property | Default | Description |
 |----------|---------|-------------|
 | `kpiLabel` | `Revenue` | KPI name shown in the narrative |
