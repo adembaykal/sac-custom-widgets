@@ -1,6 +1,6 @@
 {
   "id": "com.custom.sac.executivepulse",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "name": "Executive Pulse",
   "description": "Deterministic narrative engine: finds the biggest adverse contributor across one analysis dimension, renders a 3-step animated build-up with inline evidence. No AI/LLM required.",
   "newInstancePrefix": "Pulse",
@@ -14,6 +14,13 @@
       "kind": "main",
       "tag": "com-custom-sac-executivepulse",
       "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "styling",
+      "tag": "com-custom-sac-executivepulse-styling",
+      "url": "/styling.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
@@ -33,16 +40,6 @@
       "type": "string",
       "default": "higher-is-better",
       "description": "higher-is-better (Revenue) or lower-is-better (e.g. defect rates)"
-    },
-    "currentYear": {
-      "type": "string",
-      "default": "",
-      "description": "Label for the current period (e.g. 2026). Leave empty to auto-resolve the most recent available period."
-    },
-    "priorYear": {
-      "type": "string",
-      "default": "",
-      "description": "Label for the prior period (e.g. 2025). Leave empty to auto-resolve the second most recent available period."
     },
     "dimLabel": {
       "type": "string",

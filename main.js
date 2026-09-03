@@ -948,6 +948,7 @@
       this._shadow = this.attachShadow({ mode: 'open' });
       this._props = {};
       this._n = null;
+      this._cachedBinding = null;
       this._v3StateMsg = null;
       this._narrativeParts = [];
       this._explainMap = null;
@@ -965,16 +966,25 @@
       this._timers.forEach(clearTimeout);
       if (this._pulseInterval) clearInterval(this._pulseInterval);
     }
-    onCustomWidgetBeforeUpdate() {}
+    async onCustomWidgetBeforeUpdate() {}
 
-    onCustomWidgetAfterUpdate(changedProps) {
+    async onCustomWidgetAfterUpdate(changedProps) {
       Object.assign(this._props, changedProps);
-      if (changedProps.dataBinding) this._processBinding(changedProps.dataBinding);
-      else this._render();
+      if (changedProps.dataBinding) {
+        this._cachedBinding = changedProps.dataBinding;
+        this._processBinding(changedProps.dataBinding);
+      } else if (this._cachedBinding) {
+        this._processBinding(this._cachedBinding);
+      } else {
+        this._render();
+      }
     }
 
-    onCustomWidgetDataChanged(dataBinding) { this._processBinding(dataBinding); }
-    onCustomWidgetResize(w, h) { this._applyScale(w, h); }
+    async onCustomWidgetDataChanged(dataBinding) {
+      this._cachedBinding = dataBinding;
+      this._processBinding(dataBinding);
+    }
+    async onCustomWidgetResize(w, h) { this._applyScale(w, h); }
 
     _processBinding(dataBinding) {
       const meta  = dataBinding.metadata;
