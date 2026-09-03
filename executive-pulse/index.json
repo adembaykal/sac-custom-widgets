@@ -34,16 +34,6 @@
       "default": "higher-is-better",
       "description": "higher-is-better (Revenue) or lower-is-better (e.g. defect rates)"
     },
-    "currentYear": {
-      "type": "string",
-      "default": "",
-      "description": "Label for the current period (e.g. 2026). Leave empty to auto-resolve the most recent available period."
-    },
-    "priorYear": {
-      "type": "string",
-      "default": "",
-      "description": "Label for the prior period (e.g. 2025). Leave empty to auto-resolve the second most recent available period."
-    },
     "dimLabel": {
       "type": "string",
       "default": "Segment",

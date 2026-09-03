@@ -119,10 +119,6 @@
     .kpi-vs {
       font-size: 11px; font-weight: 500; color: #94a3b8; margin-bottom: 18px;
     }
-    .consecutive-warning {
-      font-size: 11px; color: #92400e; background: #fef3c7; border: 1px solid #fde68a;
-      border-radius: 6px; padding: 6px 10px; margin-bottom: 14px;
-    }
 
     /* ── NARRATIVE ── */
     .narrative-block {
@@ -644,118 +640,6 @@
     return parseBindingYearMonth(data, tpAlias, dimKeys, measKey, comparisonMode);
   }
 
-  /* ─── PARSE (Legacy V2) ──────────────────────────────────────────────────── */
-  // Supports 2 or 3 dimensions.
-  // Time dim   = fewest unique values
-  // Dim 1 (Executive Layer)   = second most unique values (or first non-time)
-  // Dim 2 (Explanation Layer) = most unique values (or second non-time, optional)
-  //
-  // Cross-dim data structure for Explanation Layer:
-  //   explainMap[dim1MemberId][dim2MemberId] = { label, cur, prior }
-
-  function parseBinding(dataBinding, curYear, priorYear) {
-    const data = dataBinding.data;
-    if (!data || data.length === 0) return null;
-    const firstRow = data[0];
-    const dimKeys  = Object.keys(firstRow).filter(k => k.startsWith('dimensions_'));
-    const measKeys = Object.keys(firstRow).filter(k => k.startsWith('measures_'));
-    if (dimKeys.length < 2 || measKeys.length < 1) return null;
-
-    // Time dim = fewest unique values
-    const uniqueCounts = dimKeys.map(k => new Set(data.map(r => r[k] && r[k].id)).size);
-    let timeIdx = 0;
-    for (let i = 1; i < uniqueCounts.length; i++) {
-      if (uniqueCounts[i] < uniqueCounts[timeIdx]) timeIdx = i;
-    }
-    const timeDimKey = dimKeys[timeIdx];
-    const nonTimeDims = dimKeys.filter((_, i) => i !== timeIdx);
-
-    // Among non-time dims: dim1 = fewer uniques (Executive), dim2 = more uniques (Explanation)
-    // If only 1 non-time dim, dim2 is absent
-    let dim1Key, dim2Key = null;
-    if (nonTimeDims.length === 1) {
-      dim1Key = nonTimeDims[0];
-    } else {
-      const c0 = new Set(data.map(r => r[nonTimeDims[0]] && r[nonTimeDims[0]].id)).size;
-      const c1 = new Set(data.map(r => r[nonTimeDims[1]] && r[nonTimeDims[1]].id)).size;
-      // dim1 = fewer unique members (e.g. Sellers), dim2 = more (e.g. Products)
-      if (c0 <= c1) { dim1Key = nonTimeDims[0]; dim2Key = nonTimeDims[1]; }
-      else          { dim1Key = nonTimeDims[1]; dim2Key = nonTimeDims[0]; }
-    }
-    const measKey = measKeys[0];
-
-    const yearIds = [...new Set(data.map(r => r[timeDimKey] && String(r[timeDimKey].id)))].filter(y => y && y !== '@TotalMember');
-
-    function matchYear(target) {
-      if (!target) return null;
-      return yearIds.find(y => y === String(target))
-          || yearIds.find(y => y.includes(String(target)))
-          || null;
-    }
-
-    let resolvedCur = matchYear(curYear);
-    let resolvedPrior = matchYear(priorYear);
-    if (!resolvedCur || !resolvedPrior) {
-      const sorted = [...yearIds].sort();
-      if (sorted.length >= 2) { resolvedPrior = sorted[sorted.length - 2]; resolvedCur = sorted[sorted.length - 1]; }
-      else if (sorted.length === 1) { resolvedCur = sorted[0]; resolvedPrior = null; }
-    }
-
-    // Build dim1 memberMap (Executive Layer)
-    const memberMap = {};
-    // Build explainMap[dim1Id][dim2Id] = {label, cur, prior} (Explanation Layer)
-    const explainMap = {};
-
-    for (const row of data) {
-      const yearId  = row[timeDimKey]  && String(row[timeDimKey].id);
-      const mem1    = row[dim1Key];
-      const measCell = row[measKey];
-      if (!mem1) continue;
-      // BW/4 delivers result/total rows with id "@TotalMember" — skip them to avoid double-counting
-      if (String(mem1.id) === '@TotalMember') continue;
-      if (yearId === '@TotalMember') continue;
-      const mem1Id  = String(mem1.id);
-      const val     = measCell && measCell.raw !== undefined ? Number(measCell.raw) : null;
-
-      // Dim1 aggregation (sum across dim2 if present)
-      if (!memberMap[mem1Id]) memberMap[mem1Id] = { label: mem1.label || mem1.id, cur: null, prior: null };
-      if (yearId === resolvedCur)   memberMap[mem1Id].cur   = (memberMap[mem1Id].cur   ?? 0) + (val ?? 0);
-      else if (yearId === resolvedPrior) memberMap[mem1Id].prior = (memberMap[mem1Id].prior ?? 0) + (val ?? 0);
-
-      // Dim2 explanation data
-      if (dim2Key) {
-        const mem2 = row[dim2Key];
-        if (!mem2) continue;
-        if (String(mem2.id) === '@TotalMember') continue;
-        const mem2Id = String(mem2.id);
-        if (!explainMap[mem1Id]) explainMap[mem1Id] = {};
-        if (!explainMap[mem1Id][mem2Id]) explainMap[mem1Id][mem2Id] = { label: mem2.label || mem2.id, cur: null, prior: null };
-        if (yearId === resolvedCur)        explainMap[mem1Id][mem2Id].cur   = (explainMap[mem1Id][mem2Id].cur   ?? 0) + (val ?? 0);
-        else if (yearId === resolvedPrior) explainMap[mem1Id][mem2Id].prior = (explainMap[mem1Id][mem2Id].prior ?? 0) + (val ?? 0);
-      }
-    }
-
-    const members = Object.entries(memberMap).map(([id, info]) => {
-      const { cur, prior } = info;
-      const delta = (cur !== null && prior !== null) ? cur - prior
-                  : (cur !== null ? cur : prior !== null ? -prior : null);
-      return { id, label: cleanName(info.label), cur, prior, delta,
-               isNew: prior === null && cur !== null,
-               isLost: cur === null && prior !== null };
-    });
-
-    return { members, resolvedCur, resolvedPrior, explainMap, dim2Key };
-  }
-
-  /* ─── CALENDAR YEAR HELPER ─────────────────────────────────────────────── */
-
-  function parseCalendarYear(value) {
-    const s = String(value ?? '').trim();
-    if (!/^\d{4}$/.test(s)) return null;
-    const y = Number(s);
-    return (y >= 1900 && y <= 2200) ? y : null;
-  }
-
   /* ─── COMPUTE EXECUTIVE ─────────────────────────────────────────────────── */
 
   function compute(members, polarity, unit, kpiLabel, dimLabel, curYear, priorYear) {
@@ -792,18 +676,12 @@
     else if (adverse.length > 0) scenario = 'B';
     else scenario = 'C';
 
-    const curYearNum   = parseCalendarYear(curYear);
-    const priorYearNum = parseCalendarYear(priorYear);
-    const consecutiveWarning = (curYearNum !== null && priorYearNum !== null && curYearNum - priorYearNum !== 1)
-      ? `Executive Pulse is designed for consecutive calendar years. Current comparison: ${curYear} vs. ${priorYear}.`
-      : null;
-
     return {
       scenario, totalDelta, totalCur, totalPrior, totalPct,
       adverse, favorable, valid,
       totalAdverseImpact, totalFavorableImpact,
       breadth: adverse.length, total: valid.length, concentration,
-      unit, kpiLabel, dimLabel, curYear, priorYear, polarity, consecutiveWarning,
+      unit, kpiLabel, dimLabel, curYear, priorYear, polarity,
     };
   }
 
@@ -1042,28 +920,13 @@
         return;
       }
 
-      // Legacy V2 path — unmodified
-      const parsed = parseBinding(dataBinding, p.currentYear || '', p.priorYear || '');
-      if (!parsed) { this._n = null; this._v3StateMsg = null; this._render(); return; }
-
-      this._v3StateMsg = null;
-      this._n = compute(
-        parsed.members,
-        p.kpiPolarity || 'higher-is-better',
-        p.kpiUnit     || '',
-        p.kpiLabel    || 'Revenue',
-        p.dimLabel    || 'Segment',
-        parsed.resolvedCur   || p.currentYear || '',
-        parsed.resolvedPrior || p.priorYear   || '',
-      );
-      this._narrativeParts = buildNarrative(this._n);
-      this._explainMap     = parsed.explainMap;
-      this._dim2Key        = parsed.dim2Key;
-      this._focusMember    = this._n && this._n.adverse.length > 0
-        ? this._n.adverse[0]
-        : (this._n && this._n.valid.length > 0 ? this._n.valid[0] : null);
-      this._activeChip = null;
-      this._render();
+      // Legacy V2 path — disabled: Time binding is now required
+      if (!tpBound) {
+        this._n = null;
+        this._v3StateMsg = 'Please assign Calendar Year or Year/Month to the Time binding.';
+        this._render();
+        return;
+      }
     }
 
     _v3StateMessage(state) {
@@ -1204,8 +1067,6 @@
             </div>
             <div class="kpi-vs">${n.curYear} vs. ${n.priorYear}</div>
           </div>
-
-          ${n.consecutiveWarning ? `<div class="consecutive-warning">${n.consecutiveWarning}</div>` : ''}
 
           <div class="narrative-block">
             <div class="narrative-text">${parts}</div>
