@@ -2534,10 +2534,10 @@
       var parent=layout.parentOf[id];if(!parent||!layout.pos[parent]||!layout.pos[id])return;
       var a=layout.pos[parent],b=layout.pos[id],sx,sy,ex,ey,c1x,c1y,c2x,c2y;
       if(layout.direction==='ttb'){
-        sx=a.x+layout.cardW/2;sy=a.y+layout.cardH;ex=b.x+layout.cardW/2;ey=b.y;
+        sx=a.x+layout.cardW/2;sy=a.y+layout.cardH/2;ex=b.x+layout.cardW/2;ey=b.y-layout.cardH/2;
         c1x=sx;c1y=sy+42;c2x=ex;c2y=ey-42;
       }else{
-        sx=a.x+layout.cardW;sy=a.y+layout.cardH/2;ex=b.x;ey=b.y+layout.cardH/2;
+        sx=a.x+layout.cardW;sy=a.y;ex=b.x;ey=b.y;
         c1x=sx+42;c1y=sy;c2x=ex-42;c2y=ey;
       }
       var d='M '+sx.toFixed(1)+' '+sy.toFixed(1)+' C '+c1x.toFixed(1)+' '+c1y.toFixed(1)+', '+c2x.toFixed(1)+' '+c2y.toFixed(1)+', '+ex.toFixed(1)+' '+ey.toFixed(1);
