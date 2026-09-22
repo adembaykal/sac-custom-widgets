@@ -70,6 +70,9 @@ The following states are maintained independently from data reconstruction:
 - zoom
 - pan position
 - fit state
+- layout direction (left to right or top to bottom)
 - animation state
+
+Layout direction changes only node positioning and connection routing. It does not change BW parent child relationships, sorting, values, or inspector semantics.
 
 Animation and replay are visual controls and should not rewrite the user's hierarchy or viewport state.
