@@ -1,4 +1,4 @@
-/* Hierarchy Pulse - SAC Custom Widget v1.0.0
+/* Hierarchy Pulse - SAC Custom Widget v1.1.0
  * Executive BW hierarchy variance flow with auto-detected KPI direction, favorable/adverse business semantics, delta-first visual encoding, impact-weighted edges, native units, animation control, pan/zoom, and concise branch detail.
  * No AI. No backend. No SAC feed mutation. Reads only the bound result set.
  */
