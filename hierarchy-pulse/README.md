@@ -6,7 +6,7 @@ The widget reads the hierarchy directly from the SAC data binding and reconstruc
 
 ## Status
 
-**Version:** 1.1.0  
+**Version:** 1.1.1  
 **Release status:** Golden Build / release candidate validated against the current BW Live test scenario
 
 Hierarchy Pulse is a technical prototype and reference implementation. It is not an SAP product and does not represent an SAP product commitment.
@@ -54,10 +54,11 @@ The current BW reference scenario uses:
 
 ## Interaction
 
-The current 1.1.0 build includes:
+The current 1.1.1 build includes:
 
 - native parent child hierarchy reconstruction
 - selectable hierarchy layout: Left to right or Top to bottom
+- selected layout direction is persisted with the SAC story
 - sibling sorting by absolute variance without changing hierarchy relationships
 - branch selection and inspector
 - direct branch and direct product contribution tables
@@ -65,6 +66,7 @@ The current 1.1.0 build includes:
 - KPI direction modes: Auto, Higher is better, Lower is better, Neutral
 - smooth expand and collapse transitions
 - animation on/off control
+- continuous highlighted-path data-flow animation across layout changes
 - replay
 - reset
 - zoom, pan and fit

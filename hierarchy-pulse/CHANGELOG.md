@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.1.1
+
+Bug-fix release for the selectable hierarchy layout introduced in 1.1.0.
+
+### Fixed
+
+- highlighted-path data-flow animation now remains active after switching between Left-to-right and Top-to-bottom
+- layout direction is now persisted as a Custom Widget property and restored when the SAC story is saved and reopened
+
+### Unchanged
+
+- BW hierarchy reconstruction and native `parentId` semantics
+- KPI calculations, polarity handling, inspector behavior, expand/collapse, pan/zoom, and native units
+
 ## 1.1.0
 
 Adds selectable hierarchy orientation without changing BW hierarchy semantics.

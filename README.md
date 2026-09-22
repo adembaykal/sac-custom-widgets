@@ -13,7 +13,7 @@ These projects are independent community projects and are not official SAP produ
 | Widget | Version | Description |
 |---|---:|---|
 | [Executive Pulse](executive-pulse/) | 4.0.0 | Deterministic narrative widget for KPI variance analysis and contributor ranking |
-| [Hierarchy Pulse](hierarchy-pulse/) | 1.1.0 | BW Live hierarchy variance visualization with native parent child reconstruction, selectable layout, and branch/product inspection |
+| [Hierarchy Pulse](hierarchy-pulse/) | 1.1.1 | BW Live hierarchy variance visualization with native parent child reconstruction, persistent selectable layout, and branch/product inspection |
 
 ---
 

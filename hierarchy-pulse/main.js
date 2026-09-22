@@ -1,4 +1,4 @@
-/* Hierarchy Pulse - SAC Custom Widget v1.1.0
+/* Hierarchy Pulse - SAC Custom Widget v1.1.1
  * Executive BW hierarchy variance flow with auto-detected KPI direction, favorable/adverse business semantics, delta-first visual encoding, impact-weighted edges, native units, animation control, pan/zoom, and concise branch detail.
  * No AI. No backend. No SAC feed mutation. Reads only the bound result set.
  */
@@ -2435,7 +2435,19 @@
       +self._summaryHtml()+'<div class="body"><div class="stage"><div class="zoom-tools"><button id="hp-zoom-out" class="zoom-btn" type="button" title="Zoom out">−</button><span id="hp-zoom-label" class="zoom-label">100%</span><button id="hp-zoom-in" class="zoom-btn" type="button" title="Zoom in">+</button><button id="hp-fit" class="zoom-btn zoom-fit" type="button" title="Fit tree">Fit</button></div><div class="tree-scroll">'+self._treeHtml()+'</div>'+self._overviewHtml()+'</div>'+self._panelHtml()+'</div>';
     var ms=self.shadowRoot.querySelector('#hp-measure');if(ms)ms.addEventListener('change',function(){self._selectedMeasureAlias=ms.value;self._detailsOpen=false;try{self._model=buildModel(self);self._selectedId=self._selectedId&&self._model.hierarchyStructure[self._selectedId]?self._selectedId:null;self._autoFit=true;self._render();}catch(err){self._renderError(String(err&&err.message||err));}});
     var ps=self.shadowRoot.querySelector('#hp-polarity');if(ps)ps.addEventListener('change',function(){var alias=self._model&&self._model.measureAlias;if(alias){self._polarityModes=self._polarityModes||{};self._polarityModes[alias]=ps.value;}self._render(false);});
-    var ls=self.shadowRoot.querySelector('#hp-layout');if(ls)ls.addEventListener('change',function(){var next=ls.value==='ttb'?'ttb':'ltr';if(next===self._layoutDirection)return;self._pendingTreeTransition=self._captureTreeTransition();self._layoutDirection=next;self._autoFit=true;self._preserveExactViewport=false;self._suppressPathAnimationOnce=true;self._render();});
+    var ls=self.shadowRoot.querySelector('#hp-layout');if(ls)ls.addEventListener('change',function(){
+      var next=ls.value==='ttb'?'ttb':'ltr';
+      if(next===self._layoutDirection)return;
+      self._pendingTreeTransition=self._captureTreeTransition();
+      self._layoutDirection=next;
+      self._autoFit=true;
+      self._preserveExactViewport=false;
+      self._suppressPathAnimationOnce=true;
+      try{
+        self.dispatchEvent(new CustomEvent('propertiesChanged',{detail:{properties:{layoutDirection:next}}}));
+      }catch(e){}
+      self._render();
+    });
     var at=self.shadowRoot.querySelector('#hp-animation');if(at)at.addEventListener('click',function(){self._animationEnabled=self._animationEnabled===false?true:false;self._preserveExactViewport=true;self._render(false);});
     var rp=self.shadowRoot.querySelector('#hp-replay');if(rp)rp.addEventListener('click',function(){if(self._animationEnabled!==false){self._preserveExactViewport=true;self._render(false);}});
     var rb=self.shadowRoot.querySelector('#hp-root');if(rb)rb.addEventListener('click',function(){var roots=self._roots();self._selectedId=roots.length===1?roots[0]:null;self._detailsOpen=false;self._collapseSignature=null;self._collapsedIds={};self._autoFit=true;self._render();});
@@ -2523,7 +2535,7 @@
   };
 
   HierarchyPulseWidget.prototype._treeHtml = function () {
-    var self=this,model=self._model,unit=unitFromModel(model),layout=self._layoutTree(),animate=self._animationEnabled!==false&&!self._suppressPathAnimationOnce;
+    var self=this,model=self._model,unit=unitFromModel(model),layout=self._layoutTree(),flowEnabled=self._animationEnabled!==false,animateEntry=flowEnabled&&!self._suppressPathAnimationOnce;
     var selected=self._selectedId||(layout.roots.length===1?layout.roots[0]:null);
     var rawPath=self._dominantPath(null),path=rawPath.filter(function(id){return !!layout.pos[id];}),pathSet={},edgeSet={};
     path.forEach(function(id,i){pathSet[id]=i;if(i)edgeSet[path[i-1]+'>>'+id]=i-1;});
@@ -2543,10 +2555,20 @@
       var d='M '+sx.toFixed(1)+' '+sy.toFixed(1)+' C '+c1x.toFixed(1)+' '+c1y.toFixed(1)+', '+c2x.toFixed(1)+' '+c2y.toFixed(1)+', '+ex.toFixed(1)+' '+ey.toFixed(1);
       var nd=self._nodeData(id),ratio=Math.sqrt(Math.min(1,Math.abs(nd.delta||0)/maxAbs)),edgeW=(1.6+5.4*ratio).toFixed(2),ek=parent+'>>'+id,onPath=edgeSet[ek]!=null,cls=self._businessClass(nd.delta);
       baseEdges+='<path class="edge impact '+cls+(onPath?' path-base':'')+'" style="stroke-width:'+edgeW+'px" d="'+d+'"></path>';
-      if(onPath){var delay=(edgeSet[ek]*620+180)+'ms',runW=(Number(edgeW)+2.1).toFixed(2);if(animate){runEdges+='<path pathLength="1" class="edge path-run '+pathCls+'" style="--delay:'+delay+';stroke-width:'+runW+'px" d="'+d+'"></path><path pathLength="100" class="edge path-travel '+pathCls+'" style="--delay:'+delay+';stroke-width:'+runW+'px" d="'+d+'"></path>';}else{runEdges+='<path class="edge path-static '+pathCls+'" style="stroke-width:'+runW+'px" d="'+d+'"></path>';}}
+      if(onPath){
+        var delay=(edgeSet[ek]*620+180)+'ms',runW=(Number(edgeW)+2.1).toFixed(2);
+        if(animateEntry){
+          runEdges+='<path pathLength="1" class="edge path-run '+pathCls+'" style="--delay:'+delay+';stroke-width:'+runW+'px" d="'+d+'"></path>';
+        }else{
+          runEdges+='<path class="edge path-static '+pathCls+'" style="stroke-width:'+runW+'px" d="'+d+'"></path>';
+        }
+        if(flowEnabled){
+          runEdges+='<path pathLength="100" class="edge path-travel '+pathCls+'" style="--delay:'+(animateEntry?delay:'0ms')+';stroke-width:'+runW+'px" d="'+d+'"></path>';
+        }
+      }
     });
-    layout.ids.forEach(function(id){var p=layout.pos[id],nd=self._nodeData(id),cls=self._businessClass(nd.delta),inPath=pathSet[id]!=null,pathIndex=inPath?pathSet[id]:-1,delay=(pathIndex*620)+'ms';var ratio=Math.sqrt(Math.min(1,Math.abs(nd.delta||0)/maxAbs)),bar=(48*ratio).toFixed(1),fillCls=cls==='up'?'pos':cls==='down'?'neg':'neu',arrow=nd.delta>0?'▲ ':nd.delta<0?'▼ ':'';var pathClass=inPath?(animate?' path-node':' path-static-node'):'',classes='node-card '+cls+(id===selected?' selected':'')+pathClass+(id===target?' target':'');var kids=layout.fullChildren[id]||[],collapsed=!!self._collapsedIds[id],toggle='';if(kids.length){var hiddenCount=layout.descendantCount[id]||kids.length;toggle='<button class="node-toggle '+(collapsed?'collapsed':'expanded')+'" type="button" data-tree-toggle="'+esc(id)+'" aria-expanded="'+(collapsed?'false':'true')+'" title="'+(collapsed?'Expand':'Collapse')+' '+esc(nd.label)+'"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5L10 8l-5 4.5"></path></svg>'+(collapsed?'<span class="hidden-count">+'+hiddenCount+'</span>':'')+'</button>';}
-      nodes+='<div class="'+classes+'" data-tree-node="'+esc(id)+'" style="left:'+p.x+'px;top:'+p.y+'px;'+(inPath&&animate?'--delay:'+delay:'')+'" title="'+esc(nd.label)+'">'+toggle+'<div class="node-name">'+esc(nd.label)+'</div><div class="node-delta-main"><span class="node-delta-abs">'+esc(nd.delta==null?'—':compactDelta(nd.delta,unit))+'</span><span class="node-delta-pct">'+esc(arrow+(nd.deltaPct==null?'—':formatPct(nd.deltaPct)))+'</span></div><div class="node-current">'+esc(model.currentScopeLabel||'Current')+' '+esc(formatValue(nd.current,unit))+'</div><div class="delta-axis"><i class="delta-fill '+fillCls+'" style="width:'+bar+'%"></i></div></div>';});
+    layout.ids.forEach(function(id){var p=layout.pos[id],nd=self._nodeData(id),cls=self._businessClass(nd.delta),inPath=pathSet[id]!=null,pathIndex=inPath?pathSet[id]:-1,delay=(pathIndex*620)+'ms';var ratio=Math.sqrt(Math.min(1,Math.abs(nd.delta||0)/maxAbs)),bar=(48*ratio).toFixed(1),fillCls=cls==='up'?'pos':cls==='down'?'neg':'neu',arrow=nd.delta>0?'▲ ':nd.delta<0?'▼ ':'';var pathClass=inPath?(animateEntry?' path-node':' path-static-node'):'',classes='node-card '+cls+(id===selected?' selected':'')+pathClass+(id===target?' target':'');var kids=layout.fullChildren[id]||[],collapsed=!!self._collapsedIds[id],toggle='';if(kids.length){var hiddenCount=layout.descendantCount[id]||kids.length;toggle='<button class="node-toggle '+(collapsed?'collapsed':'expanded')+'" type="button" data-tree-toggle="'+esc(id)+'" aria-expanded="'+(collapsed?'false':'true')+'" title="'+(collapsed?'Expand':'Collapse')+' '+esc(nd.label)+'"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5L10 8l-5 4.5"></path></svg>'+(collapsed?'<span class="hidden-count">+'+hiddenCount+'</span>':'')+'</button>';}
+      nodes+='<div class="'+classes+'" data-tree-node="'+esc(id)+'" style="left:'+p.x+'px;top:'+p.y+'px;'+(inPath&&animateEntry?'--delay:'+delay:'')+'" title="'+esc(nd.label)+'">'+toggle+'<div class="node-name">'+esc(nd.label)+'</div><div class="node-delta-main"><span class="node-delta-abs">'+esc(nd.delta==null?'—':compactDelta(nd.delta,unit))+'</span><span class="node-delta-pct">'+esc(arrow+(nd.deltaPct==null?'—':formatPct(nd.deltaPct)))+'</span></div><div class="node-current">'+esc(model.currentScopeLabel||'Current')+' '+esc(formatValue(nd.current,unit))+'</div><div class="delta-axis"><i class="delta-fill '+fillCls+'" style="width:'+bar+'%"></i></div></div>';});
     return '<div class="tree-zoom-wrap"><div class="tree-canvas" data-natural-width="'+layout.width+'" data-natural-height="'+layout.height+'" style="width:'+layout.width+'px;height:'+layout.height+'px"><svg class="edge-layer" viewBox="0 0 '+layout.width+' '+layout.height+'" preserveAspectRatio="none">'+baseEdges+runEdges+'</svg>'+nodes+'</div></div>';
   };
 
@@ -2720,7 +2742,17 @@
     }
   };
   HierarchyPulseWidget.prototype.onCustomWidgetBeforeUpdate = function () { this._ensure(); };
-  HierarchyPulseWidget.prototype.onCustomWidgetAfterUpdate = function () { this._schedule(); };
+  HierarchyPulseWidget.prototype.onCustomWidgetAfterUpdate = function (changedProps) {
+    changedProps=changedProps||{};
+    if(changedProps.layoutDirection!==undefined){
+      var next=changedProps.layoutDirection==='ttb'?'ttb':'ltr';
+      if(next!==this._layoutDirection){
+        this._layoutDirection=next;
+        this._autoFit=true;
+      }
+    }
+    this._schedule();
+  };
   HierarchyPulseWidget.prototype.onCustomWidgetResize = function () { if(!this._model) return; if(this._autoFit) this._fitTree(); else this._applyZoom(this._zoom||1,false); };
   HierarchyPulseWidget.prototype.disconnectedCallback = function () {
     if(this._renderTimer) clearTimeout(this._renderTimer); this._renderTimer=null;
