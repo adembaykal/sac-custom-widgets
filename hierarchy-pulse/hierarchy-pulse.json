@@ -1,8 +1,8 @@
 {
   "id": "com.custom.hierarchy_pulse",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "name": "Hierarchy Pulse",
-  "description": "BW Live hierarchy variance reference widget with native parent-child reconstruction, selectable left-to-right or top-to-bottom layout, delta-sorted siblings, smooth expand/collapse, stable replay state, automatic KPI direction detection, leaf-aware branch details, impact-weighted connections, native units, animation, pan/zoom, and SAC filter-context awareness.",
+  "description": "BW Live hierarchy variance reference widget with native parent-child reconstruction, selectable left-to-right or top-to-bottom layout, persistent layout selection, continuous highlighted-path data flow, delta-sorted siblings, smooth expand/collapse, stable replay state, automatic KPI direction detection, leaf-aware branch details, impact-weighted connections, native units, animation, pan/zoom, and SAC filter-context awareness.",
   "newInstancePrefix": "HierarchyPulse",
   "icon": "",
   "vendor": "Custom",
@@ -18,7 +18,13 @@
       "ignoreIntegrity": true
     }
   ],
-  "properties": {},
+  "properties": {
+    "layoutDirection": {
+      "type": "string",
+      "default": "ltr",
+      "description": "Hierarchy layout direction: 'ltr' for left-to-right or 'ttb' for top-to-bottom."
+    }
+  },
   "dataBindings": {
     "hierarchyData": {
       "feeds": [
