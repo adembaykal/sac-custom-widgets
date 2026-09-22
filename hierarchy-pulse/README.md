@@ -6,7 +6,7 @@ The widget reads the hierarchy directly from the SAC data binding and reconstruc
 
 ## Status
 
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Release status:** Golden Build / release candidate validated against the current BW Live test scenario
 
 Hierarchy Pulse is a technical prototype and reference implementation. It is not an SAP product and does not represent an SAP product commitment.
@@ -54,9 +54,10 @@ The current BW reference scenario uses:
 
 ## Interaction
 
-The current 1.0.0 build includes:
+The current 1.1.0 build includes:
 
 - native parent child hierarchy reconstruction
+- selectable hierarchy layout: Left to right or Top to bottom
 - sibling sorting by absolute variance without changing hierarchy relationships
 - branch selection and inspector
 - direct branch and direct product contribution tables
@@ -120,12 +121,16 @@ Color expresses business evaluation where a direction can be determined.
 
 ## Installation
 
-The repository contains the two files required by the SAC widget package:
+The repository contains a ready-to-import package:
+
+- `hierarchy-pulse.zip`
+
+The package contains the two SAC widget files at the ZIP root:
 
 - `hierarchy-pulse.json`
 - `main.js`
 
-Create a ZIP with those two files at the ZIP root, then import that ZIP as the Custom Widget package into SAP Analytics Cloud.
+You can import `hierarchy-pulse.zip` directly into SAP Analytics Cloud. If you prefer to rebuild it yourself, create a ZIP with those two files at the ZIP root.
 
 Example on macOS or Linux:
 
@@ -157,6 +162,7 @@ hierarchy-pulse/
 ├── .gitignore
 ├── hierarchy-pulse.json
 ├── main.js
+├── hierarchy-pulse.zip
 └── docs/
     ├── ARCHITECTURE.md
     ├── TEST-CHECKLIST.md
@@ -164,7 +170,7 @@ hierarchy-pulse/
 
 ## Development principles
 
-The 1.0 implementation follows a deliberately conservative approach:
+The 1.1 implementation follows a deliberately conservative approach:
 
 - BW `parentId` relationships are authoritative.
 - No hierarchy level is derived from a label or member name.
