@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.1.0
+
+Adds selectable hierarchy orientation without changing BW hierarchy semantics.
+
+### Added
+
+- Left-to-right layout remains the default
+- new Top-to-bottom layout option in the widget header
+- orientation-aware node positioning and connection routing
+- layout switching preserves selection, hierarchy state, KPI semantics, animation setting, and inspector behavior
+- automatic fit after changing orientation
+
+### Unchanged
+
+- BW `parentId` relationships remain authoritative
+- sibling sorting, expand/collapse, branch/product inspection, KPI polarity, native units, and SAC filter context remain unchanged
+
 ## 1.0.0
 
 Initial frozen release candidate / Golden Build.
