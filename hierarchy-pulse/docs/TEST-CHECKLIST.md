@@ -1,4 +1,4 @@
-# 1.0 Regression Test Checklist
+# 1.1 Regression Test Checklist
 
 Use this checklist before changing the Golden Build.
 
@@ -51,6 +51,12 @@ Use this checklist before changing the Golden Build.
 - [ ] zoom out works
 - [ ] pan works
 - [ ] fit works
+- [ ] default layout is Left to right
+- [ ] Top to bottom layout places hierarchy depth vertically
+- [ ] switching layout preserves selection and collapsed state
+- [ ] switching layout preserves KPI direction and animation setting
+- [ ] switching layout automatically fits the new tree
+- [ ] connection routing matches the selected layout direction
 
 ## Visual
 
