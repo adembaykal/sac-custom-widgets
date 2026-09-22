@@ -120,11 +120,31 @@ Color expresses business evaluation where a direction can be determined.
 
 ## Installation
 
-1. Use `dist/hierarchy-pulse.zip` as the widget package.
-2. Import the Custom Widget package into SAP Analytics Cloud.
-3. Add Hierarchy Pulse to a story.
-4. Bind a KPI measure, a supported time dimension, and the BW hierarchy dimension.
-5. For deep product inspection, expose the required hierarchy depth in the SAC binding and keep parent levels included.
+The repository contains the two files required by the SAC widget package:
+
+- `hierarchy-pulse.json`
+- `main.js`
+
+Create a ZIP with those two files at the ZIP root, then import that ZIP as the Custom Widget package into SAP Analytics Cloud.
+
+Example on macOS or Linux:
+
+```bash
+zip hierarchy-pulse.zip hierarchy-pulse.json main.js
+```
+
+Example in PowerShell:
+
+```powershell
+Compress-Archive -Path hierarchy-pulse.json,main.js -DestinationPath hierarchy-pulse.zip -Force
+```
+
+Then:
+
+1. Import the ZIP as a Custom Widget package into SAP Analytics Cloud.
+2. Add Hierarchy Pulse to a story.
+3. Bind a KPI measure, a supported time dimension, and the BW hierarchy dimension.
+4. For deep product inspection, expose the required hierarchy depth in the SAC binding and keep parent levels included.
 
 Exact administration labels can vary by SAC release and tenant configuration.
 
@@ -137,8 +157,6 @@ hierarchy-pulse/
 ├── .gitignore
 ├── hierarchy-pulse.json
 ├── main.js
-├── dist/
-│   └── hierarchy-pulse.zip
 └── docs/
     ├── ARCHITECTURE.md
     ├── TEST-CHECKLIST.md
@@ -165,14 +183,12 @@ The 1.0 implementation follows a deliberately conservative approach:
 
 ## Release package
 
-The importable widget package is available at:
-
-`dist/hierarchy-pulse.zip`
-
-It contains only:
+The SAC import package consists only of:
 
 - `hierarchy-pulse.json`
 - `main.js`
+
+Create the ZIP as described in the Installation section, with both files at the ZIP root.
 
 ## Disclaimer
 
