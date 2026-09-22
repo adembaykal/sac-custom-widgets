@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary and diagnostic artifacts
+*.log
+*binding-dump*.json
+hierarchy-pulse-diagnostic*
+
+# Local scratch
+.tmp/
+tmp/
