@@ -1,0 +1,45 @@
+{
+  "id": "com.custom.hierarchy_pulse",
+  "version": "1.0.0",
+  "name": "Hierarchy Pulse",
+  "description": "BW Live hierarchy variance reference widget with native parent-child reconstruction, delta-sorted siblings, smooth expand/collapse, stable replay state, automatic KPI direction detection, leaf-aware branch details, impact-weighted connections, native units, animation, pan/zoom, overview, and SAC filter-context awareness.",
+  "newInstancePrefix": "HierarchyPulse",
+  "icon": "",
+  "vendor": "Custom",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-hierarchy-pulse",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {},
+  "dataBindings": {
+    "hierarchyData": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "KPI Measures (one or more; selector appears only when multiple are bound)",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "time",
+          "description": "Time Dimension (Calendar Year, Year/Month, or Day for period-aligned YoY comparison)",
+          "type": "dimension"
+        },
+        {
+          "id": "hierarchy",
+          "description": "BW Hierarchy Dimension",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {}
+}
