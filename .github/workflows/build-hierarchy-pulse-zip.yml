@@ -1,0 +1,39 @@
+name: Build Hierarchy Pulse SAC package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "hierarchy-pulse/main.js"
+      - "hierarchy-pulse/hierarchy-pulse.json"
+      - ".github/workflows/build-hierarchy-pulse-zip.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build SAC widget ZIP
+        run: |
+          cd hierarchy-pulse
+          rm -f hierarchy-pulse.zip
+          zip -j hierarchy-pulse.zip hierarchy-pulse.json main.js
+          unzip -l hierarchy-pulse.zip
+
+      - name: Commit package
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hierarchy-pulse/hierarchy-pulse.zip
+          if git diff --cached --quiet; then
+            echo "Package is already up to date."
+            exit 0
+          fi
+          git commit -m "build(hierarchy-pulse): refresh SAC package [skip ci]"
+          git push
