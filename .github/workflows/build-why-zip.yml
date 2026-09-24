@@ -1,0 +1,39 @@
+name: Build WHY SAC package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "why/main.js"
+      - "why/why.json"
+      - ".github/workflows/build-why-zip.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build SAC widget ZIP
+        run: |
+          cd why
+          rm -f why.zip
+          zip -j why.zip why.json main.js
+          unzip -l why.zip
+
+      - name: Commit package
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add why/why.zip
+          if git diff --cached --quiet; then
+            echo "Package is already up to date."
+            exit 0
+          fi
+          git commit -m "build(why): refresh SAC package [skip ci]"
+          git push

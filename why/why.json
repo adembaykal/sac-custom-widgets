@@ -1,0 +1,45 @@
+{
+  "id": "com.custom.why",
+  "version": "1.0.0",
+  "name": "WHY",
+  "description": "Deterministic SAP Analytics Cloud variance signal analysis that compares period-aligned movement, groups overlapping evidence and ranks material signals by measured impact on the total rate. Includes data-driven YTD and period-range labeling, qualified dominant-driver logic, inspectable related views, native unit/currency inheritance, clickable period values and an executive multi-phase analysis experience. No AI, no backend, no telemetry, no writeback.",
+  "newInstancePrefix": "WHY",
+  "icon": "",
+  "vendor": "Custom",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-why",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {},
+  "dataBindings": {
+    "whyData": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "KPI Measures (one or more; selector appears when multiple are bound)",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "time",
+          "description": "Time Dimension (Calendar Year, Year/Month, or Day for period-aligned YoY comparison)",
+          "type": "dimension"
+        },
+        {
+          "id": "dimensions",
+          "description": "Analysis Dimensions (bind one or more dimensions to scan for variance drivers)",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {}
+}

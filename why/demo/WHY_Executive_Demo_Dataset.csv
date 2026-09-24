@@ -1,0 +1,650 @@
+<PARSED TEXT FOR SHEET: 1 / 1 TABS
+TAB NAME: WHY_Executive_Demo_Dataset.csv>index,Date,YearMonth,Year,MonthNo,Month,Country Code,Country,Sales Channel Code,Sales Channel,Product Group Code,Product Group,Gross Revenue,Currency
+0,2025-01-01,2025-01,2025,1,Jan,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,120967.68,EUR
+1,2026-01-01,2026-01,2026,1,Jan,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,117599.12,EUR
+2,2025-02-01,2025-02,2025,2,Feb,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,125545.95,EUR
+3,2026-02-01,2026-02,2026,2,Feb,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,120876.34,EUR
+4,2025-03-01,2025-03,2025,3,Mar,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,130282.43,EUR
+5,2026-03-01,2026-03,2026,3,Mar,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,123000.99,EUR
+6,2025-04-01,2025-04,2025,4,Apr,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,133092.84,EUR
+7,2026-04-01,2026-04,2026,4,Apr,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,80866.65,EUR
+8,2025-05-01,2025-05,2025,5,May,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,135648.23,EUR
+9,2026-05-01,2026-05,2026,5,May,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,60863.48,EUR
+10,2025-06-01,2025-06,2025,6,Jun,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,138173.06,EUR
+11,2026-06-01,2026-06,2026,6,Jun,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,54246.79,EUR
+12,2025-07-01,2025-07,2025,7,Jul,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,143610.91,EUR
+13,2026-07-01,2026-07,2026,7,Jul,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,60408.96,EUR
+14,2025-08-01,2025-08,2025,8,Aug,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,159570.52,EUR
+15,2026-08-01,2026-08,2026,8,Aug,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,77563.49,EUR
+16,2025-09-01,2025-09,2025,9,Sep,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,179939.43,EUR
+17,2026-09-01,2026-09,2026,9,Sep,FR,France,DIRECT,Direct Sales,CE,Consumer Electronics,100920.4,EUR
+18,2025-01-01,2025-01,2025,1,Jan,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,21798.38,EUR
+19,2026-01-01,2026-01,2026,1,Jan,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,21605.12,EUR
+20,2025-02-01,2025-02,2025,2,Feb,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,23078.3,EUR
+21,2026-02-01,2026-02,2026,2,Feb,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,22956.94,EUR
+22,2025-03-01,2025-03,2025,3,Mar,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,24430.39,EUR
+23,2026-03-01,2026-03,2026,3,Mar,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,24390.06,EUR
+24,2025-04-01,2025-04,2025,4,Apr,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,25459.05,EUR
+25,2026-04-01,2026-04,2026,4,Apr,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,25462.94,EUR
+26,2025-05-01,2025-05,2025,5,May,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,26469.47,EUR
+27,2026-05-01,2026-05,2026,5,May,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,26521.25,EUR
+28,2025-06-01,2025-06,2025,6,Jun,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,27504.3,EUR
+29,2026-06-01,2026-06,2026,6,Jun,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,27607.72,EUR
+30,2025-07-01,2025-07,2025,7,Jul,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,29161.85,EUR
+31,2026-07-01,2026-07,2026,7,Jul,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,29324.1,EUR
+32,2025-08-01,2025-08,2025,8,Aug,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,31732.77,EUR
+33,2026-08-01,2026-08,2026,8,Aug,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,31966.57,EUR
+34,2025-09-01,2025-09,2025,9,Sep,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,34734.81,EUR
+35,2026-09-01,2026-09,2026,9,Sep,FR,France,DIRECT,Direct Sales,IND,Industrial Solutions,35053.36,EUR
+36,2025-01-01,2025-01,2025,1,Jan,FR,France,DIRECT,Direct Sales,SVC,Services & Support,13479.41,EUR
+37,2026-01-01,2026-01,2026,1,Jan,FR,France,DIRECT,Direct Sales,SVC,Services & Support,13322.05,EUR
+38,2025-02-01,2025-02,2025,2,Feb,FR,France,DIRECT,Direct Sales,SVC,Services & Support,13986.85,EUR
+39,2026-02-01,2026-02,2026,2,Feb,FR,France,DIRECT,Direct Sales,SVC,Services & Support,13874.02,EUR
+40,2025-03-01,2025-03,2025,3,Mar,FR,France,DIRECT,Direct Sales,SVC,Services & Support,14511.65,EUR
+41,2026-03-01,2026-03,2026,3,Mar,FR,France,DIRECT,Direct Sales,SVC,Services & Support,14446.94,EUR
+42,2025-04-01,2025-04,2025,4,Apr,FR,France,DIRECT,Direct Sales,SVC,Services & Support,15124.19,EUR
+43,2026-04-01,2026-04,2026,4,Apr,FR,France,DIRECT,Direct Sales,SVC,Services & Support,15084.01,EUR
+44,2025-05-01,2025-05,2025,5,May,FR,France,DIRECT,Direct Sales,SVC,Services & Support,15725.98,EUR
+45,2026-05-01,2026-05,2026,5,May,FR,France,DIRECT,Direct Sales,SVC,Services & Support,15712.56,EUR
+46,2025-06-01,2025-06,2025,6,Jun,FR,France,DIRECT,Direct Sales,SVC,Services & Support,16342.36,EUR
+47,2026-06-01,2026-06,2026,6,Jun,FR,France,DIRECT,Direct Sales,SVC,Services & Support,16357.89,EUR
+48,2025-07-01,2025-07,2025,7,Jul,FR,France,DIRECT,Direct Sales,SVC,Services & Support,16992.39,EUR
+49,2026-07-01,2026-07,2026,7,Jul,FR,France,DIRECT,Direct Sales,SVC,Services & Support,17039.19,EUR
+50,2025-08-01,2025-08,2025,8,Aug,FR,France,DIRECT,Direct Sales,SVC,Services & Support,18133.01,EUR
+51,2026-08-01,2026-08,2026,8,Aug,FR,France,DIRECT,Direct Sales,SVC,Services & Support,18215.66,EUR
+52,2025-09-01,2025-09,2025,9,Sep,FR,France,DIRECT,Direct Sales,SVC,Services & Support,19661.21,EUR
+53,2026-09-01,2026-09,2026,9,Sep,FR,France,DIRECT,Direct Sales,SVC,Services & Support,19786.27,EUR
+54,2025-01-01,2025-01,2025,1,Jan,FR,France,ONLINE,Online,CE,Consumer Electronics,14579.78,EUR
+55,2026-01-01,2026-01,2026,1,Jan,FR,France,ONLINE,Online,CE,Consumer Electronics,14409.71,EUR
+56,2025-02-01,2025-02,2025,2,Feb,FR,France,ONLINE,Online,CE,Consumer Electronics,15590.68,EUR
+57,2026-02-01,2026-02,2026,2,Feb,FR,France,ONLINE,Online,CE,Consumer Electronics,15465.07,EUR
+58,2025-03-01,2025-03,2025,3,Mar,FR,France,ONLINE,Online,CE,Consumer Electronics,16846.24,EUR
+59,2026-03-01,2026-03,2026,3,Mar,FR,France,ONLINE,Online,CE,Consumer Electronics,16771.28,EUR
+60,2025-04-01,2025-04,2025,4,Apr,FR,France,ONLINE,Online,CE,Consumer Electronics,17738.24,EUR
+61,2026-04-01,2026-04,2026,4,Apr,FR,France,ONLINE,Online,CE,Consumer Electronics,17691.31,EUR
+62,2025-05-01,2025-05,2025,5,May,FR,France,ONLINE,Online,CE,Consumer Electronics,18434.97,EUR
+63,2026-05-01,2026-05,2026,5,May,FR,France,ONLINE,Online,CE,Consumer Electronics,18419.44,EUR
+64,2025-06-01,2025-06,2025,6,Jun,FR,France,ONLINE,Online,CE,Consumer Electronics,18946.11,EUR
+65,2026-06-01,2026-06,2026,6,Jun,FR,France,ONLINE,Online,CE,Consumer Electronics,18964.33,EUR
+66,2025-07-01,2025-07,2025,7,Jul,FR,France,ONLINE,Online,CE,Consumer Electronics,20052.46,EUR
+67,2026-07-01,2026-07,2026,7,Jul,FR,France,ONLINE,Online,CE,Consumer Electronics,20107.91,EUR
+68,2025-08-01,2025-08,2025,8,Aug,FR,France,ONLINE,Online,CE,Consumer Electronics,22674.02,EUR
+69,2026-08-01,2026-08,2026,8,Aug,FR,France,ONLINE,Online,CE,Consumer Electronics,22777.59,EUR
+70,2025-09-01,2025-09,2025,9,Sep,FR,France,ONLINE,Online,CE,Consumer Electronics,26003.15,EUR
+71,2026-09-01,2026-09,2026,9,Sep,FR,France,ONLINE,Online,CE,Consumer Electronics,26168.83,EUR
+72,2025-01-01,2025-01,2025,1,Jan,FR,France,ONLINE,Online,IND,Industrial Solutions,15763.65,EUR
+73,2026-01-01,2026-01,2026,1,Jan,FR,France,ONLINE,Online,IND,Industrial Solutions,15697.72,EUR
+74,2025-02-01,2025-02,2025,2,Feb,FR,France,ONLINE,Online,IND,Industrial Solutions,17195.59,EUR
+75,2026-02-01,2026-02,2026,2,Feb,FR,France,ONLINE,Online,IND,Industrial Solutions,17185.71,EUR
+76,2025-03-01,2025-03,2025,3,Mar,FR,France,ONLINE,Online,IND,Industrial Solutions,18953.92,EUR
+77,2026-03-01,2026-03,2026,3,Mar,FR,France,ONLINE,Online,IND,Industrial Solutions,19011.41,EUR
+78,2025-04-01,2025-04,2025,4,Apr,FR,France,ONLINE,Online,IND,Industrial Solutions,20358.67,EUR
+79,2026-04-01,2026-04,2026,4,Apr,FR,France,ONLINE,Online,IND,Industrial Solutions,20457.14,EUR
+80,2025-05-01,2025-05,2025,5,May,FR,France,ONLINE,Online,IND,Industrial Solutions,21583.64,EUR
+81,2026-05-01,2026-05,2026,5,May,FR,France,ONLINE,Online,IND,Industrial Solutions,21726.99,EUR
+82,2025-06-01,2025-06,2025,6,Jun,FR,France,ONLINE,Online,IND,Industrial Solutions,22628.13,EUR
+83,2026-06-01,2026-06,2026,6,Jun,FR,France,ONLINE,Online,IND,Industrial Solutions,22819.23,EUR
+84,2025-07-01,2025-07,2025,7,Jul,FR,France,ONLINE,Online,IND,Industrial Solutions,24431.31,EUR
+85,2026-07-01,2026-07,2026,7,Jul,FR,France,ONLINE,Online,IND,Industrial Solutions,24681.71,EUR
+86,2025-08-01,2025-08,2025,8,Aug,FR,France,ONLINE,Online,IND,Industrial Solutions,27054.22,EUR
+87,2026-08-01,2026-08,2026,8,Aug,FR,France,ONLINE,Online,IND,Industrial Solutions,27380.31,EUR
+88,2025-09-01,2025-09,2025,9,Sep,FR,France,ONLINE,Online,IND,Industrial Solutions,30117.28,EUR
+89,2026-09-01,2026-09,2026,9,Sep,FR,France,ONLINE,Online,IND,Industrial Solutions,30534.64,EUR
+90,2025-01-01,2025-01,2025,1,Jan,FR,France,ONLINE,Online,SVC,Services & Support,9747.73,EUR
+91,2026-01-01,2026-01,2026,1,Jan,FR,France,ONLINE,Online,SVC,Services & Support,8969.97,EUR
+92,2025-02-01,2025-02,2025,2,Feb,FR,France,ONLINE,Online,SVC,Services & Support,10421.57,EUR
+93,2026-02-01,2026-02,2026,2,Feb,FR,France,ONLINE,Online,SVC,Services & Support,9496.02,EUR
+94,2025-03-01,2025-03,2025,3,Mar,FR,France,ONLINE,Online,SVC,Services & Support,11258.63,EUR
+95,2026-03-01,2026-03,2026,3,Mar,FR,France,ONLINE,Online,SVC,Services & Support,10157.17,EUR
+96,2025-04-01,2025-04,2025,4,Apr,FR,France,ONLINE,Online,SVC,Services & Support,12094.26,EUR
+97,2026-04-01,2026-04,2026,4,Apr,FR,France,ONLINE,Online,SVC,Services & Support,11238.38,EUR
+98,2025-05-01,2025-05,2025,5,May,FR,France,ONLINE,Online,SVC,Services & Support,12823.22,EUR
+99,2026-05-01,2026-05,2026,5,May,FR,France,ONLINE,Online,SVC,Services & Support,12494.19,EUR
+100,2025-06-01,2025-06,2025,6,Jun,FR,France,ONLINE,Online,SVC,Services & Support,13445.06,EUR
+101,2026-06-01,2026-06,2026,6,Jun,FR,France,ONLINE,Online,SVC,Services & Support,13949.16,EUR
+102,2025-07-01,2025-07,2025,7,Jul,FR,France,ONLINE,Online,SVC,Services & Support,14235.93,EUR
+103,2026-07-01,2026-07,2026,7,Jul,FR,France,ONLINE,Online,SVC,Services & Support,15411.85,EUR
+104,2025-08-01,2025-08,2025,8,Aug,FR,France,ONLINE,Online,SVC,Services & Support,15459.55,EUR
+105,2026-08-01,2026-08,2026,8,Aug,FR,France,ONLINE,Online,SVC,Services & Support,17015.48,EUR
+106,2025-09-01,2025-09,2025,9,Sep,FR,France,ONLINE,Online,SVC,Services & Support,17047.52,EUR
+107,2026-09-01,2026-09,2026,9,Sep,FR,France,ONLINE,Online,SVC,Services & Support,19224.66,EUR
+108,2025-01-01,2025-01,2025,1,Jan,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,13731.64,EUR
+109,2026-01-01,2026-01,2026,1,Jan,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,13455.81,EUR
+110,2025-02-01,2025-02,2025,2,Feb,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,14676.09,EUR
+111,2026-02-01,2026-02,2026,2,Feb,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,14434.21,EUR
+112,2025-03-01,2025-03,2025,3,Mar,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,15688.18,EUR
+113,2026-03-01,2026-03,2026,3,Mar,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,15486.19,EUR
+114,2025-04-01,2025-04,2025,4,Apr,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16347.2,EUR
+115,2026-04-01,2026-04,2026,4,Apr,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16166.19,EUR
+116,2025-05-01,2025-05,2025,5,May,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16334.31,EUR
+117,2026-05-01,2026-05,2026,5,May,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16182.9,EUR
+118,2025-06-01,2025-06,2025,6,Jun,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16152.17,EUR
+119,2026-06-01,2026-06,2026,6,Jun,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16031.58,EUR
+120,2025-07-01,2025-07,2025,7,Jul,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16460.26,EUR
+121,2026-07-01,2026-07,2026,7,Jul,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,16367.03,EUR
+122,2025-08-01,2025-08,2025,8,Aug,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,17932.51,EUR
+123,2026-08-01,2026-08,2026,8,Aug,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,17863.28,EUR
+124,2025-09-01,2025-09,2025,9,Sep,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,20231.29,EUR
+125,2026-09-01,2026-09,2026,9,Sep,FR,France,PARTNER,Partner Sales,CE,Consumer Electronics,20189.68,EUR
+126,2025-01-01,2025-01,2025,1,Jan,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,14846.65,EUR
+127,2026-01-01,2026-01,2026,1,Jan,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,14659.5,EUR
+128,2025-02-01,2025-02,2025,2,Feb,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,16186.86,EUR
+129,2026-02-01,2026-02,2026,2,Feb,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,16041.2,EUR
+130,2025-03-01,2025-03,2025,3,Mar,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,17650.96,EUR
+131,2026-03-01,2026-03,2026,3,Mar,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,17555.79,EUR
+132,2025-04-01,2025-04,2025,4,Apr,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,18762.11,EUR
+133,2026-04-01,2026-04,2026,4,Apr,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,18694.79,EUR
+134,2025-05-01,2025-05,2025,5,May,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,19124.19,EUR
+135,2026-05-01,2026-05,2026,5,May,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,19090.05,EUR
+136,2025-06-01,2025-06,2025,6,Jun,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,19291.21,EUR
+137,2026-06-01,2026-06,2026,6,Jun,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,19291.57,EUR
+138,2025-07-01,2025-07,2025,7,Jul,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,20054.67,EUR
+139,2026-07-01,2026-07,2026,7,Jul,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,20091.21,EUR
+140,2025-08-01,2025-08,2025,8,Aug,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,21396.74,EUR
+141,2026-08-01,2026-08,2026,8,Aug,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,21474.31,EUR
+142,2025-09-01,2025-09,2025,9,Sep,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,23432.21,EUR
+143,2026-09-01,2026-09,2026,9,Sep,FR,France,PARTNER,Partner Sales,IND,Industrial Solutions,23559.42,EUR
+144,2025-01-01,2025-01,2025,1,Jan,FR,France,PARTNER,Partner Sales,SVC,Services & Support,9180.69,EUR
+145,2026-01-01,2026-01,2026,1,Jan,FR,France,PARTNER,Partner Sales,SVC,Services & Support,9039.18,EUR
+146,2025-02-01,2025-02,2025,2,Feb,FR,France,PARTNER,Partner Sales,SVC,Services & Support,9810.22,EUR
+147,2026-02-01,2026-02,2026,2,Feb,FR,France,PARTNER,Partner Sales,SVC,Services & Support,9694.39,EUR
+148,2025-03-01,2025-03,2025,3,Mar,FR,France,PARTNER,Partner Sales,SVC,Services & Support,10484.67,EUR
+149,2026-03-01,2026-03,2026,3,Mar,FR,France,PARTNER,Partner Sales,SVC,Services & Support,10398.69,EUR
+150,2025-04-01,2025-04,2025,4,Apr,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11145.81,EUR
+151,2026-04-01,2026-04,2026,4,Apr,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11074.5,EUR
+152,2025-05-01,2025-05,2025,5,May,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11362.01,EUR
+153,2026-05-01,2026-05,2026,5,May,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11309.82,EUR
+154,2025-06-01,2025-06,2025,6,Jun,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11462.35,EUR
+155,2026-06-01,2026-06,2026,6,Jun,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11430.36,EUR
+156,2025-07-01,2025-07,2025,7,Jul,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11685.7,EUR
+157,2026-07-01,2026-07,2026,7,Jul,FR,France,PARTNER,Partner Sales,SVC,Services & Support,11674.16,EUR
+158,2025-08-01,2025-08,2025,8,Aug,FR,France,PARTNER,Partner Sales,SVC,Services & Support,12226.71,EUR
+159,2026-08-01,2026-08,2026,8,Aug,FR,France,PARTNER,Partner Sales,SVC,Services & Support,12236.68,EUR
+160,2025-09-01,2025-09,2025,9,Sep,FR,France,PARTNER,Partner Sales,SVC,Services & Support,13263.51,EUR
+161,2026-09-01,2026-09,2026,9,Sep,FR,France,PARTNER,Partner Sales,SVC,Services & Support,13298.26,EUR
+162,2025-01-01,2025-01,2025,1,Jan,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,21639.78,EUR
+163,2026-01-01,2026-01,2026,1,Jan,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,21528.74,EUR
+164,2025-02-01,2025-02,2025,2,Feb,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,22467.76,EUR
+165,2026-02-01,2026-02,2026,2,Feb,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,22433.54,EUR
+166,2025-03-01,2025-03,2025,3,Mar,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,24017.18,EUR
+167,2026-03-01,2026-03,2026,3,Mar,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,24067.24,EUR
+168,2025-04-01,2025-04,2025,4,Apr,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,25023.56,EUR
+169,2026-04-01,2026-04,2026,4,Apr,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,25120.87,EUR
+170,2025-05-01,2025-05,2025,5,May,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,25519.18,EUR
+171,2026-05-01,2026-05,2026,5,May,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,25664.45,EUR
+172,2025-06-01,2025-06,2025,6,Jun,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,26002.13,EUR
+173,2026-06-01,2026-06,2026,6,Jun,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,26197.05,EUR
+174,2025-07-01,2025-07,2025,7,Jul,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,27009.07,EUR
+175,2026-07-01,2026-07,2026,7,Jul,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,27260.27,EUR
+176,2025-08-01,2025-08,2025,8,Aug,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,29993.14,EUR
+177,2026-08-01,2026-08,2026,8,Aug,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,30326.19,EUR
+178,2025-09-01,2025-09,2025,9,Sep,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,33483.87,EUR
+179,2026-09-01,2026-09,2026,9,Sep,DE,Germany,DIRECT,Direct Sales,CE,Consumer Electronics,33916.1,EUR
+180,2025-01-01,2025-01,2025,1,Jan,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,23396.93,EUR
+181,2026-01-01,2026-01,2026,1,Jan,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,23451.91,EUR
+182,2025-02-01,2025-02,2025,2,Feb,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,24780.62,EUR
+183,2026-02-01,2026-02,2026,2,Feb,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,24928.28,EUR
+184,2025-03-01,2025-03,2025,3,Mar,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,27022.03,EUR
+185,2026-03-01,2026-03,2026,3,Mar,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,27280.57,EUR
+186,2025-04-01,2025-04,2025,4,Apr,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,28720.23,EUR
+187,2026-04-01,2026-04,2026,4,Apr,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,29046.84,EUR
+188,2025-05-01,2025-05,2025,5,May,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,29877.83,EUR
+189,2026-05-01,2026-05,2026,5,May,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,30271.51,EUR
+190,2025-06-01,2025-06,2025,6,Jun,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,31055.42,EUR
+191,2026-06-01,2026-06,2026,6,Jun,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,31520.66,EUR
+192,2025-07-01,2025-07,2025,7,Jul,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,32907.02,EUR
+193,2026-07-01,2026-07,2026,7,Jul,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,33459.37,EUR
+194,2025-08-01,2025-08,2025,8,Aug,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,35787.27,EUR
+195,2026-08-01,2026-08,2026,8,Aug,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,36452.54,EUR
+196,2025-09-01,2025-09,2025,9,Sep,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,38781.58,EUR
+197,2026-09-01,2026-09,2026,9,Sep,DE,Germany,DIRECT,Direct Sales,IND,Industrial Solutions,39572.5,EUR
+198,2025-01-01,2025-01,2025,1,Jan,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,14467.9,EUR
+199,2026-01-01,2026-01,2026,1,Jan,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,14461.27,EUR
+200,2025-02-01,2025-02,2025,2,Feb,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,15018.56,EUR
+201,2026-02-01,2026-02,2026,2,Feb,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,15065.87,EUR
+202,2025-03-01,2025-03,2025,3,Mar,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,16051.09,EUR
+203,2026-03-01,2026-03,2026,3,Mar,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,16159.57,EUR
+204,2025-04-01,2025-04,2025,4,Apr,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,17061.52,EUR
+205,2026-04-01,2026-04,2026,4,Apr,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,17207.63,EUR
+206,2025-05-01,2025-05,2025,5,May,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,17750.94,EUR
+207,2026-05-01,2026-05,2026,5,May,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,17934.97,EUR
+208,2025-06-01,2025-06,2025,6,Jun,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,18452.34,EUR
+209,2026-06-01,2026-06,2026,6,Jun,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,18676.94,EUR
+210,2025-07-01,2025-07,2025,7,Jul,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,19174.67,EUR
+211,2026-07-01,2026-07,2026,7,Jul,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,19442.65,EUR
+212,2025-08-01,2025-08,2025,8,Aug,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,20449.87,EUR
+213,2026-08-01,2026-08,2026,8,Aug,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,20772.56,EUR
+214,2025-09-01,2025-09,2025,9,Sep,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,21951.84,EUR
+215,2026-09-01,2026-09,2026,9,Sep,DE,Germany,DIRECT,Direct Sales,SVC,Services & Support,22337.84,EUR
+216,2025-01-01,2025-01,2025,1,Jan,DE,Germany,ONLINE,Online,CE,Consumer Electronics,15648.96,EUR
+217,2026-01-01,2026-01,2026,1,Jan,DE,Germany,ONLINE,Online,CE,Consumer Electronics,15641.94,EUR
+218,2025-02-01,2025-02,2025,2,Feb,DE,Germany,ONLINE,Online,CE,Consumer Electronics,16740.69,EUR
+219,2026-02-01,2026-02,2026,2,Feb,DE,Germany,ONLINE,Online,CE,Consumer Electronics,16793.59,EUR
+220,2025-03-01,2025-03,2025,3,Mar,DE,Germany,ONLINE,Online,CE,Consumer Electronics,18633.32,EUR
+221,2026-03-01,2026-03,2026,3,Mar,DE,Germany,ONLINE,Online,CE,Consumer Electronics,18759.46,EUR
+222,2025-04-01,2025-04,2025,4,Apr,DE,Germany,ONLINE,Online,CE,Consumer Electronics,20010.42,EUR
+223,2026-04-01,2026-04,2026,4,Apr,DE,Germany,ONLINE,Online,CE,Consumer Electronics,20181.98,EUR
+224,2025-05-01,2025-05,2025,5,May,DE,Germany,ONLINE,Online,CE,Consumer Electronics,20808.77,EUR
+225,2026-05-01,2026-05,2026,5,May,DE,Germany,ONLINE,Online,CE,Consumer Electronics,21024.71,EUR
+226,2025-06-01,2025-06,2025,6,Jun,DE,Germany,ONLINE,Online,CE,Consumer Electronics,21392.27,EUR
+227,2026-06-01,2026-06,2026,6,Jun,DE,Germany,ONLINE,Online,CE,Consumer Electronics,21652.86,EUR
+228,2025-07-01,2025-07,2025,7,Jul,DE,Germany,ONLINE,Online,CE,Consumer Electronics,22627.75,EUR
+229,2026-07-01,2026-07,2026,7,Jul,DE,Germany,ONLINE,Online,CE,Consumer Electronics,22944.22,EUR
+230,2025-08-01,2025-08,2025,8,Aug,DE,Germany,ONLINE,Online,CE,Consumer Electronics,25571.07,EUR
+231,2026-08-01,2026-08,2026,8,Aug,DE,Germany,ONLINE,Online,CE,Consumer Electronics,25974.84,EUR
+232,2025-09-01,2025-09,2025,9,Sep,DE,Germany,ONLINE,Online,CE,Consumer Electronics,29032.65,EUR
+233,2026-09-01,2026-09,2026,9,Sep,DE,Germany,ONLINE,Online,CE,Consumer Electronics,29543.45,EUR
+234,2025-01-01,2025-01,2025,1,Jan,DE,Germany,ONLINE,Online,IND,Industrial Solutions,16919.66,EUR
+235,2026-01-01,2026-01,2026,1,Jan,DE,Germany,ONLINE,Online,IND,Industrial Solutions,17038.64,EUR
+236,2025-02-01,2025-02,2025,2,Feb,DE,Germany,ONLINE,Online,IND,Industrial Solutions,18463.99,EUR
+237,2026-02-01,2026-02,2026,2,Feb,DE,Germany,ONLINE,Online,IND,Industrial Solutions,18660.49,EUR
+238,2025-03-01,2025-03,2025,3,Mar,DE,Germany,ONLINE,Online,IND,Industrial Solutions,20964.59,EUR
+239,2026-03-01,2026-03,2026,3,Mar,DE,Germany,ONLINE,Online,IND,Industrial Solutions,21263.36,EUR
+240,2025-04-01,2025-04,2025,4,Apr,DE,Germany,ONLINE,Online,IND,Industrial Solutions,22966.51,EUR
+241,2026-04-01,2026-04,2026,4,Apr,DE,Germany,ONLINE,Online,IND,Industrial Solutions,23335.27,EUR
+242,2025-05-01,2025-05,2025,5,May,DE,Germany,ONLINE,Online,IND,Industrial Solutions,24362.87,EUR
+243,2026-05-01,2026-05,2026,5,May,DE,Germany,ONLINE,Online,IND,Industrial Solutions,24798.02,EUR
+244,2025-06-01,2025-06,2025,6,Jun,DE,Germany,ONLINE,Online,IND,Industrial Solutions,25549.68,EUR
+245,2026-06-01,2026-06,2026,6,Jun,DE,Germany,ONLINE,Online,IND,Industrial Solutions,26052.13,EUR
+246,2025-07-01,2025-07,2025,7,Jul,DE,Germany,ONLINE,Online,IND,Industrial Solutions,27568.95,EUR
+247,2026-07-01,2026-07,2026,7,Jul,DE,Germany,ONLINE,Online,IND,Industrial Solutions,28160.87,EUR
+248,2025-08-01,2025-08,2025,8,Aug,DE,Germany,ONLINE,Online,IND,Industrial Solutions,30510.94,EUR
+249,2026-08-01,2026-08,2026,8,Aug,DE,Germany,ONLINE,Online,IND,Industrial Solutions,31221.08,EUR
+250,2025-09-01,2025-09,2025,9,Sep,DE,Germany,ONLINE,Online,IND,Industrial Solutions,33626.1,EUR
+251,2026-09-01,2026-09,2026,9,Sep,DE,Germany,ONLINE,Online,IND,Industrial Solutions,34469.42,EUR
+252,2025-01-01,2025-01,2025,1,Jan,DE,Germany,ONLINE,Online,SVC,Services & Support,10462.56,EUR
+253,2026-01-01,2026-01,2026,1,Jan,DE,Germany,ONLINE,Online,SVC,Services & Support,10506.76,EUR
+254,2025-02-01,2025-02,2025,2,Feb,DE,Germany,ONLINE,Online,SVC,Services & Support,11190.29,EUR
+255,2026-02-01,2026-02,2026,2,Feb,DE,Germany,ONLINE,Online,SVC,Services & Support,11277.95,EUR
+256,2025-03-01,2025-03,2025,3,Mar,DE,Germany,ONLINE,Online,SVC,Services & Support,12452.96,EUR
+257,2026-03-01,2026-03,2026,3,Mar,DE,Germany,ONLINE,Online,SVC,Services & Support,12595.46,EUR
+258,2025-04-01,2025-04,2025,4,Apr,DE,Germany,ONLINE,Online,SVC,Services & Support,13643.47,EUR
+259,2026-04-01,2026-04,2026,4,Apr,DE,Germany,ONLINE,Online,SVC,Services & Support,13824.21,EUR
+260,2025-05-01,2025-05,2025,5,May,DE,Germany,ONLINE,Online,SVC,Services & Support,14474.42,EUR
+261,2026-05-01,2026-05,2026,5,May,DE,Germany,ONLINE,Online,SVC,Services & Support,14692.28,EUR
+262,2025-06-01,2025-06,2025,6,Jun,DE,Germany,ONLINE,Online,SVC,Services & Support,15180.97,EUR
+263,2026-06-01,2026-06,2026,6,Jun,DE,Germany,ONLINE,Online,SVC,Services & Support,15436.88,EUR
+264,2025-07-01,2025-07,2025,7,Jul,DE,Germany,ONLINE,Online,SVC,Services & Support,16064.22,EUR
+265,2026-07-01,2026-07,2026,7,Jul,DE,Germany,ONLINE,Online,SVC,Services & Support,16364.0,EUR
+266,2025-08-01,2025-08,2025,8,Aug,DE,Germany,ONLINE,Online,SVC,Services & Support,17434.82,EUR
+267,2026-08-01,2026-08,2026,8,Aug,DE,Germany,ONLINE,Online,SVC,Services & Support,17791.64,EUR
+268,2025-09-01,2025-09,2025,9,Sep,DE,Germany,ONLINE,Online,SVC,Services & Support,19033.64,EUR
+269,2026-09-01,2026-09,2026,9,Sep,DE,Germany,ONLINE,Online,SVC,Services & Support,19457.52,EUR
+270,2025-01-01,2025-01,2025,1,Jan,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,14738.63,EUR
+271,2026-01-01,2026-01,2026,1,Jan,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,14607.88,EUR
+272,2025-02-01,2025-02,2025,2,Feb,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,15758.64,EUR
+273,2026-02-01,2026-02,2026,2,Feb,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,15675.69,EUR
+274,2025-03-01,2025-03,2025,3,Mar,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,17352.41,EUR
+275,2026-03-01,2026-03,2026,3,Mar,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,17323.66,EUR
+276,2025-04-01,2025-04,2025,4,Apr,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18441.19,EUR
+277,2026-04-01,2026-04,2026,4,Apr,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18443.91,EUR
+278,2025-05-01,2025-05,2025,5,May,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18437.61,EUR
+279,2026-05-01,2026-05,2026,5,May,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18473.58,EUR
+280,2025-06-01,2025-06,2025,6,Jun,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18237.61,EUR
+281,2026-06-01,2026-06,2026,6,Jun,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18306.08,EUR
+282,2025-07-01,2025-07,2025,7,Jul,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18574.2,EUR
+283,2026-07-01,2026-07,2026,7,Jul,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,18677.45,EUR
+284,2025-08-01,2025-08,2025,8,Aug,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,20223.74,EUR
+285,2026-08-01,2026-08,2026,8,Aug,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,20372.63,EUR
+286,2025-09-01,2025-09,2025,9,Sep,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,22588.33,EUR
+287,2026-09-01,2026-09,2026,9,Sep,DE,Germany,PARTNER,Partner Sales,CE,Consumer Electronics,22795.37,EUR
+288,2025-01-01,2025-01,2025,1,Jan,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,15935.41,EUR
+289,2026-01-01,2026-01,2026,1,Jan,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,15913.26,EUR
+290,2025-02-01,2025-02,2025,2,Feb,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,17380.85,EUR
+291,2026-02-01,2026-02,2026,2,Feb,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,17419.41,EUR
+292,2025-03-01,2025-03,2025,3,Mar,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,19523.41,EUR
+293,2026-03-01,2026-03,2026,3,Mar,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,19637.17,EUR
+294,2025-04-01,2025-04,2025,4,Apr,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,21165.46,EUR
+295,2026-04-01,2026-04,2026,4,Apr,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,21326.96,EUR
+296,2025-05-01,2025-05,2025,5,May,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,21586.73,EUR
+297,2026-05-01,2026-05,2026,5,May,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,21790.4,EUR
+298,2025-06-01,2025-06,2025,6,Jun,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,21781.92,EUR
+299,2026-06-01,2026-06,2026,6,Jun,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,22026.74,EUR
+300,2025-07-01,2025-07,2025,7,Jul,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,22630.24,EUR
+301,2026-07-01,2026-07,2026,7,Jul,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,22925.41,EUR
+302,2025-08-01,2025-08,2025,8,Aug,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,24130.59,EUR
+303,2026-08-01,2026-08,2026,8,Aug,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,24488.87,EUR
+304,2025-09-01,2025-09,2025,9,Sep,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,26162.18,EUR
+305,2026-09-01,2026-09,2026,9,Sep,DE,Germany,PARTNER,Partner Sales,IND,Industrial Solutions,26597.82,EUR
+306,2025-01-01,2025-01,2025,1,Jan,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,9853.93,EUR
+307,2026-01-01,2026-01,2026,1,Jan,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,9779.43,EUR
+308,2025-02-01,2025-02,2025,2,Feb,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,10533.85,EUR
+309,2026-02-01,2026-02,2026,2,Feb,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,10549.24,EUR
+310,2025-03-01,2025-03,2025,3,Mar,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,11596.91,EUR
+311,2026-03-01,2026-03,2026,3,Mar,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,11613.85,EUR
+312,2025-04-01,2025-04,2025,4,Apr,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,12573.54,EUR
+313,2026-04-01,2026-04,2026,4,Apr,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,12705.36,EUR
+314,2025-05-01,2025-05,2025,5,May,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,12825.05,EUR
+315,2026-05-01,2026-05,2026,5,May,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,12959.51,EUR
+316,2025-06-01,2025-06,2025,6,Jun,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,12942.27,EUR
+317,2026-06-01,2026-06,2026,6,Jun,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,13194.72,EUR
+318,2025-07-01,2025-07,2025,7,Jul,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,13186.47,EUR
+319,2026-07-01,2026-07,2026,7,Jul,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,13443.68,EUR
+320,2025-08-01,2025-08,2025,8,Aug,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,13788.91,EUR
+321,2026-08-01,2026-08,2026,8,Aug,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,14182.28,EUR
+322,2025-09-01,2025-09,2025,9,Sep,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,14808.78,EUR
+323,2026-09-01,2026-09,2026,9,Sep,DE,Germany,PARTNER,Partner Sales,SVC,Services & Support,15231.25,EUR
+324,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,20487.7,EUR
+325,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,20344.39,EUR
+326,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,21276.0,EUR
+327,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,21203.91,EUR
+328,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,22522.5,EUR
+329,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,22527.45,EUR
+330,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,23703.2,EUR
+331,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,23751.17,EUR
+332,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,25134.69,EUR
+333,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,25230.89,EUR
+334,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,26115.18,EUR
+335,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,26262.24,EUR
+336,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,26847.89,EUR
+337,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,27047.51,EUR
+338,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,29792.52,EUR
+339,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,30067.76,EUR
+340,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,33553.2,EUR
+341,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,DIRECT,Direct Sales,CE,Consumer Electronics,33923.72,EUR
+342,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,22151.31,EUR
+343,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,22162.07,EUR
+344,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,23466.17,EUR
+345,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,23562.24,EUR
+346,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,25340.35,EUR
+347,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,25535.53,EUR
+348,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,27204.81,EUR
+349,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,27463.45,EUR
+350,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,29427.67,EUR
+351,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,29760.53,EUR
+352,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,31190.44,EUR
+353,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,31599.52,EUR
+354,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,32710.65,EUR
+355,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,33198.69,EUR
+356,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,35547.89,EUR
+357,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,36142.39,EUR
+358,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,38861.87,EUR
+359,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,DIRECT,Direct Sales,IND,Industrial Solutions,39581.93,EUR
+360,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,13697.65,EUR
+361,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,13665.83,EUR
+362,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,14221.92,EUR
+363,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,14240.2,EUR
+364,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,15052.17,EUR
+365,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,15125.83,EUR
+366,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,16161.28,EUR
+367,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,16269.52,EUR
+368,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,17483.49,EUR
+369,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,17632.14,EUR
+370,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,18532.57,EUR
+371,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,18723.57,EUR
+372,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,19060.24,EUR
+373,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,19291.07,EUR
+374,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,20313.08,EUR
+375,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,20595.73,EUR
+376,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,21997.29,EUR
+377,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,DIRECT,Direct Sales,SVC,Services & Support,22343.06,EUR
+378,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,14815.83,EUR
+379,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,14781.56,EUR
+380,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,15852.7,EUR
+381,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,15873.24,EUR
+382,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,17473.7,EUR
+383,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,17559.4,EUR
+384,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,18954.58,EUR
+385,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,19081.73,EUR
+386,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,20495.24,EUR
+387,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,20669.71,EUR
+388,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,21485.28,EUR
+389,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,21706.94,EUR
+390,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,22492.72,EUR
+391,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,22765.34,EUR
+392,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,25400.03,EUR
+393,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,25753.72,EUR
+394,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,29092.75,EUR
+395,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,ONLINE,Online,CE,Consumer Electronics,29550.34,EUR
+396,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,90524.08,EUR
+397,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,124946.66,EUR
+398,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,98807.0,EUR
+399,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,137678.05,EUR
+400,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,111099.77,EUR
+401,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,157727.74,EUR
+402,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,122937.67,EUR
+403,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,180998.18,EUR
+404,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,135602.44,EUR
+405,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,210339.42,EUR
+406,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,145011.26,EUR
+407,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,238277.42,EUR
+408,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,154864.85,EUR
+409,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,274826.0,EUR
+410,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,171266.72,EUR
+411,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,326446.61,EUR
+412,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,190417.48,EUR
+413,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,ONLINE,Online,IND,Industrial Solutions,387980.31,EUR
+414,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,9905.55,EUR
+415,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,9928.93,EUR
+416,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,10596.73,EUR
+417,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,10659.98,EUR
+418,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,11677.97,EUR
+419,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,11789.82,EUR
+420,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,12923.58,EUR
+421,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,13070.68,EUR
+422,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,14256.34,EUR
+423,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,14444.32,EUR
+424,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,15246.98,EUR
+425,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,15475.55,EUR
+426,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,15968.35,EUR
+427,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,16236.55,EUR
+428,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,17318.2,EUR
+429,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,17640.32,EUR
+430,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,19073.05,EUR
+431,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,ONLINE,Online,SVC,Services & Support,19462.22,EUR
+432,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,13953.96,EUR
+433,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,13804.16,EUR
+434,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,14922.75,EUR
+435,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,14816.37,EUR
+436,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,16272.51,EUR
+437,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,16215.21,EUR
+438,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,17468.14,EUR
+439,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,17438.14,EUR
+440,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,18159.81,EUR
+441,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,18161.37,EUR
+442,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,18316.9,EUR
+443,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,18351.51,EUR
+444,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,18463.36,EUR
+445,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,18531.55,EUR
+446,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,20088.46,EUR
+447,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,20198.89,EUR
+448,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,22635.1,EUR
+449,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,PARTNER,Partner Sales,CE,Consumer Electronics,22800.34,EUR
+450,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,15087.03,EUR
+451,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,15037.92,EUR
+452,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,16458.91,EUR
+453,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,16464.73,EUR
+454,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,18308.4,EUR
+455,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,18380.93,EUR
+456,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,20048.67,EUR
+457,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,20164.25,EUR
+458,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,21261.49,EUR
+459,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,21422.44,EUR
+460,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,21876.63,EUR
+461,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,22081.7,EUR
+462,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,22495.19,EUR
+463,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,22746.64,EUR
+464,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,23969.19,EUR
+465,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,24280.35,EUR
+466,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,26216.34,EUR
+467,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,PARTNER,Partner Sales,IND,Industrial Solutions,26603.98,EUR
+468,2025-01-01,2025-01,2025,1,Jan,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,9329.33,EUR
+469,2026-01-01,2026-01,2026,1,Jan,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,9272.77,EUR
+470,2025-02-01,2025-02,2025,2,Feb,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,9975.1,EUR
+471,2026-02-01,2026-02,2026,2,Feb,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,9950.61,EUR
+472,2025-03-01,2025-03,2025,3,Mar,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,10875.19,EUR
+473,2026-03-01,2026-03,2026,3,Mar,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,10887.73,EUR
+474,2025-04-01,2025-04,2025,4,Apr,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,11910.1,EUR
+475,2026-04-01,2026-04,2026,4,Apr,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,11945.31,EUR
+476,2025-05-01,2025-05,2025,5,May,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,12631.82,EUR
+477,2026-05-01,2026-05,2026,5,May,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,12691.97,EUR
+478,2025-06-01,2025-06,2025,6,Jun,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,12998.54,EUR
+479,2026-06-01,2026-06,2026,6,Jun,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,13083.88,EUR
+480,2025-07-01,2025-07,2025,7,Jul,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,13107.77,EUR
+481,2026-07-01,2026-07,2026,7,Jul,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,13217.46,EUR
+482,2025-08-01,2025-08,2025,8,Aug,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,13696.68,EUR
+483,2026-08-01,2026-08,2026,8,Aug,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,13836.0,EUR
+484,2025-09-01,2025-09,2025,9,Sep,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,14839.44,EUR
+485,2026-09-01,2026-09,2026,9,Sep,GB,United Kingdom,PARTNER,Partner Sales,SVC,Services & Support,15017.16,EUR
+486,2025-01-01,2025-01,2025,1,Jan,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,17799.53,EUR
+487,2026-01-01,2026-01,2026,1,Jan,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,17558.45,EUR
+488,2025-02-01,2025-02,2025,2,Feb,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,17935.14,EUR
+489,2026-02-01,2026-02,2026,2,Feb,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,17756.91,EUR
+490,2025-03-01,2025-03,2025,3,Mar,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,18611.78,EUR
+491,2026-03-01,2026-03,2026,3,Mar,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,18493.96,EUR
+492,2025-04-01,2025-04,2025,4,Apr,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,18633.0,EUR
+493,2026-04-01,2026-04,2026,4,Apr,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,18548.64,EUR
+494,2025-05-01,2025-05,2025,5,May,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,18982.84,EUR
+495,2026-05-01,2026-05,2026,5,May,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,18931.14,EUR
+496,2025-06-01,2025-06,2025,6,Jun,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,19332.01,EUR
+497,2026-06-01,2026-06,2026,6,Jun,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,19314.23,EUR
+498,2025-07-01,2025-07,2025,7,Jul,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,20308.62,EUR
+499,2026-07-01,2026-07,2026,7,Jul,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,20326.55,EUR
+500,2025-08-01,2025-08,2025,8,Aug,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,23021.49,EUR
+501,2026-08-01,2026-08,2026,8,Aug,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,23083.34,EUR
+502,2025-09-01,2025-09,2025,9,Sep,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,26204.77,EUR
+503,2026-09-01,2026-09,2026,9,Sep,IT,Italy,DIRECT,Direct Sales,CE,Consumer Electronics,26322.42,EUR
+504,2025-01-01,2025-01,2025,1,Jan,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,19244.86,EUR
+505,2026-01-01,2026-01,2026,1,Jan,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,16968.4,EUR
+506,2025-02-01,2025-02,2025,2,Feb,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,19781.4,EUR
+507,2026-02-01,2026-02,2026,2,Feb,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,17085.53,EUR
+508,2025-03-01,2025-03,2025,3,Mar,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,20940.34,EUR
+509,2026-03-01,2026-03,2026,3,Mar,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,17898.12,EUR
+510,2025-04-01,2025-04,2025,4,Apr,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,21385.6,EUR
+511,2026-04-01,2026-04,2026,4,Apr,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,18086.28,EUR
+512,2025-05-01,2025-05,2025,5,May,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,22225.09,EUR
+513,2026-05-01,2026-05,2026,5,May,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,19596.11,EUR
+514,2025-06-01,2025-06,2025,6,Jun,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,23089.03,EUR
+515,2026-06-01,2026-06,2026,6,Jun,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,21604.24,EUR
+516,2025-07-01,2025-07,2025,7,Jul,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,24743.39,EUR
+517,2026-07-01,2026-07,2026,7,Jul,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,24487.92,EUR
+518,2025-08-01,2025-08,2025,8,Aug,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,27468.82,EUR
+519,2026-08-01,2026-08,2026,8,Aug,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,28420.9,EUR
+520,2025-09-01,2025-09,2025,9,Sep,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,30350.8,EUR
+521,2026-09-01,2026-09,2026,9,Sep,IT,Italy,DIRECT,Direct Sales,IND,Industrial Solutions,32221.99,EUR
+522,2025-01-01,2025-01,2025,1,Jan,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,11900.39,EUR
+523,2026-01-01,2026-01,2026,1,Jan,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,11794.82,EUR
+524,2025-02-01,2025-02,2025,2,Feb,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,11988.73,EUR
+525,2026-02-01,2026-02,2026,2,Feb,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,11925.63,EUR
+526,2025-03-01,2025-03,2025,3,Mar,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,12438.56,EUR
+527,2026-03-01,2026-03,2026,3,Mar,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,12417.96,EUR
+528,2025-04-01,2025-04,2025,4,Apr,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,12704.32,EUR
+529,2026-04-01,2026-04,2026,4,Apr,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,12706.2,EUR
+530,2025-05-01,2025-05,2025,5,May,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,13204.32,EUR
+531,2026-05-01,2026-05,2026,5,May,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,13230.09,EUR
+532,2025-06-01,2025-06,2025,6,Jun,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,13718.92,EUR
+533,2026-06-01,2026-06,2026,6,Jun,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,13770.42,EUR
+534,2025-07-01,2025-07,2025,7,Jul,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,14417.78,EUR
+535,2026-07-01,2026-07,2026,7,Jul,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,14497.93,EUR
+536,2025-08-01,2025-08,2025,8,Aug,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,15696.47,EUR
+537,2026-08-01,2026-08,2026,8,Aug,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,15812.04,EUR
+538,2025-09-01,2025-09,2025,9,Sep,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,17179.71,EUR
+539,2026-09-01,2026-09,2026,9,Sep,IT,Italy,DIRECT,Direct Sales,SVC,Services & Support,17337.16,EUR
+540,2025-01-01,2025-01,2025,1,Jan,IT,Italy,ONLINE,Online,CE,Consumer Electronics,12871.86,EUR
+541,2026-01-01,2026-01,2026,1,Jan,IT,Italy,ONLINE,Online,CE,Consumer Electronics,12757.8,EUR
+542,2025-02-01,2025-02,2025,2,Feb,IT,Italy,ONLINE,Online,CE,Consumer Electronics,13363.43,EUR
+543,2026-02-01,2026-02,2026,2,Feb,IT,Italy,ONLINE,Online,CE,Consumer Electronics,13293.24,EUR
+544,2025-03-01,2025-03,2025,3,Mar,IT,Italy,ONLINE,Online,CE,Consumer Electronics,14439.63,EUR
+545,2026-03-01,2026-03,2026,3,Mar,IT,Italy,ONLINE,Online,CE,Consumer Electronics,14415.87,EUR
+546,2025-04-01,2025-04,2025,4,Apr,IT,Italy,ONLINE,Online,CE,Consumer Electronics,14900.12,EUR
+547,2026-04-01,2026-04,2026,4,Apr,IT,Italy,ONLINE,Online,CE,Consumer Electronics,14902.49,EUR
+548,2025-05-01,2025-05,2025,5,May,IT,Italy,ONLINE,Online,CE,Consumer Electronics,15478.92,EUR
+549,2026-05-01,2026-05,2026,5,May,IT,Italy,ONLINE,Online,CE,Consumer Electronics,15509.29,EUR
+550,2025-06-01,2025-06,2025,6,Jun,IT,Italy,ONLINE,Online,CE,Consumer Electronics,15904.69,EUR
+551,2026-06-01,2026-06,2026,6,Jun,IT,Italy,ONLINE,Online,CE,Consumer Electronics,15964.58,EUR
+552,2025-07-01,2025-07,2025,7,Jul,IT,Italy,ONLINE,Online,CE,Consumer Electronics,17014.22,EUR
+553,2026-07-01,2026-07,2026,7,Jul,IT,Italy,ONLINE,Online,CE,Consumer Electronics,17108.97,EUR
+554,2025-08-01,2025-08,2025,8,Aug,IT,Italy,ONLINE,Online,CE,Consumer Electronics,19627.3,EUR
+555,2026-08-01,2026-08,2026,8,Aug,IT,Italy,ONLINE,Online,CE,Consumer Electronics,19772.01,EUR
+556,2025-09-01,2025-09,2025,9,Sep,IT,Italy,ONLINE,Online,CE,Consumer Electronics,22721.2,EUR
+557,2026-09-01,2026-09,2026,9,Sep,IT,Italy,ONLINE,Online,CE,Consumer Electronics,22929.69,EUR
+558,2025-01-01,2025-01,2025,1,Jan,IT,Italy,ONLINE,Online,IND,Industrial Solutions,13917.06,EUR
+559,2026-01-01,2026-01,2026,1,Jan,IT,Italy,ONLINE,Online,IND,Industrial Solutions,13897.85,EUR
+560,2025-02-01,2025-02,2025,2,Feb,IT,Italy,ONLINE,Online,IND,Industrial Solutions,14739.08,EUR
+561,2026-02-01,2026-02,2026,2,Feb,IT,Italy,ONLINE,Online,IND,Industrial Solutions,14771.93,EUR
+562,2025-03-01,2025-03,2025,3,Mar,IT,Italy,ONLINE,Online,IND,Industrial Solutions,16246.21,EUR
+563,2026-03-01,2026-03,2026,3,Mar,IT,Italy,ONLINE,Online,IND,Industrial Solutions,16341.04,EUR
+564,2025-04-01,2025-04,2025,4,Apr,IT,Italy,ONLINE,Online,IND,Industrial Solutions,17101.28,EUR
+565,2026-04-01,2026-04,2026,4,Apr,IT,Italy,ONLINE,Online,IND,Industrial Solutions,17231.96,EUR
+566,2025-05-01,2025-05,2025,5,May,IT,Italy,ONLINE,Online,IND,Industrial Solutions,18122.71,EUR
+567,2026-05-01,2026-05,2026,5,May,IT,Italy,ONLINE,Online,IND,Industrial Solutions,18293.88,EUR
+568,2025-06-01,2025-06,2025,6,Jun,IT,Italy,ONLINE,Online,IND,Industrial Solutions,18995.63,EUR
+569,2026-06-01,2026-06,2026,6,Jun,IT,Italy,ONLINE,Online,IND,Industrial Solutions,19209.32,EUR
+570,2025-07-01,2025-07,2025,7,Jul,IT,Italy,ONLINE,Online,IND,Industrial Solutions,20729.6,EUR
+571,2026-07-01,2026-07,2026,7,Jul,IT,Italy,ONLINE,Online,IND,Industrial Solutions,21000.19,EUR
+572,2025-08-01,2025-08,2025,8,Aug,IT,Italy,ONLINE,Online,IND,Industrial Solutions,23418.94,EUR
+573,2026-08-01,2026-08,2026,8,Aug,IT,Italy,ONLINE,Online,IND,Industrial Solutions,23766.89,EUR
+574,2025-09-01,2025-09,2025,9,Sep,IT,Italy,ONLINE,Online,IND,Industrial Solutions,26316.08,EUR
+575,2026-09-01,2026-09,2026,9,Sep,IT,Italy,ONLINE,Online,IND,Industrial Solutions,26754.56,EUR
+576,2025-01-01,2025-01,2025,1,Jan,IT,Italy,ONLINE,Online,SVC,Services & Support,8605.85,EUR
+577,2026-01-01,2026-01,2026,1,Jan,IT,Italy,ONLINE,Online,SVC,Services & Support,8569.81,EUR
+578,2025-02-01,2025-02,2025,2,Feb,IT,Italy,ONLINE,Online,SVC,Services & Support,8932.78,EUR
+579,2026-02-01,2026-02,2026,2,Feb,IT,Italy,ONLINE,Online,SVC,Services & Support,8927.6,EUR
+580,2025-03-01,2025-03,2025,3,Mar,IT,Italy,ONLINE,Online,SVC,Services & Support,9650.25,EUR
+581,2026-03-01,2026-03,2026,3,Mar,IT,Italy,ONLINE,Online,SVC,Services & Support,9679.47,EUR
+582,2025-04-01,2025-04,2025,4,Apr,IT,Italy,ONLINE,Online,SVC,Services & Support,10159.18,EUR
+583,2026-04-01,2026-04,2026,4,Apr,IT,Italy,ONLINE,Online,SVC,Services & Support,10208.27,EUR
+584,2025-05-01,2025-05,2025,5,May,IT,Italy,ONLINE,Online,SVC,Services & Support,10767.02,EUR
+585,2026-05-01,2026-05,2026,5,May,IT,Italy,ONLINE,Online,SVC,Services & Support,10838.47,EUR
+586,2025-06-01,2025-06,2025,6,Jun,IT,Italy,ONLINE,Online,SVC,Services & Support,11286.72,EUR
+587,2026-06-01,2026-06,2026,6,Jun,IT,Italy,ONLINE,Online,SVC,Services & Support,11381.99,EUR
+588,2025-07-01,2025-07,2025,7,Jul,IT,Italy,ONLINE,Online,SVC,Services & Support,12078.98,EUR
+589,2026-07-01,2026-07,2026,7,Jul,IT,Italy,ONLINE,Online,SVC,Services & Support,12202.71,EUR
+590,2025-08-01,2025-08,2025,8,Aug,IT,Italy,ONLINE,Online,SVC,Services & Support,13382.25,EUR
+591,2026-08-01,2026-08,2026,8,Aug,IT,Italy,ONLINE,Online,SVC,Services & Support,13543.48,EUR
+592,2025-09-01,2025-09,2025,9,Sep,IT,Italy,ONLINE,Online,SVC,Services & Support,14895.89,EUR
+593,2026-09-01,2026-09,2026,9,Sep,IT,Italy,ONLINE,Online,SVC,Services & Support,15102.23,EUR
+594,2025-01-01,2025-01,2025,1,Jan,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,12123.08,EUR
+595,2026-01-01,2026-01,2026,1,Jan,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,11913.54,EUR
+596,2025-02-01,2025-02,2025,2,Feb,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,12579.5,EUR
+597,2026-02-01,2026-02,2026,2,Feb,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,12407.44,EUR
+598,2025-03-01,2025-03,2025,3,Mar,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13447.01,EUR
+599,2026-03-01,2026-03,2026,3,Mar,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13311.58,EUR
+600,2025-04-01,2025-04,2025,4,Apr,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13731.64,EUR
+601,2026-04-01,2026-04,2026,4,Apr,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13618.11,EUR
+602,2025-05-01,2025-05,2025,5,May,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13715.11,EUR
+603,2026-05-01,2026-05,2026,5,May,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13626.44,EUR
+604,2025-06-01,2025-06,2025,6,Jun,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13559.26,EUR
+605,2026-06-01,2026-06,2026,6,Jun,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13496.05,EUR
+606,2025-07-01,2025-07,2025,7,Jul,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13966.28,EUR
+607,2026-07-01,2026-07,2026,7,Jul,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,13926.35,EUR
+608,2025-08-01,2025-08,2025,8,Aug,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,15522.91,EUR
+609,2026-08-01,2026-08,2026,8,Aug,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,15506.51,EUR
+610,2025-09-01,2025-09,2025,9,Sep,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,17677.82,EUR
+611,2026-09-01,2026-09,2026,9,Sep,IT,Italy,PARTNER,Partner Sales,CE,Consumer Electronics,17691.04,EUR
+612,2025-01-01,2025-01,2025,1,Jan,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,13107.48,EUR
+613,2026-01-01,2026-01,2026,1,Jan,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,12978.98,EUR
+614,2025-02-01,2025-02,2025,2,Feb,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,13874.46,EUR
+615,2026-02-01,2026-02,2026,2,Feb,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,13788.49,EUR
+616,2025-03-01,2025-03,2025,3,Mar,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,15129.4,EUR
+617,2026-03-01,2026-03,2026,3,Mar,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,15090.24,EUR
+618,2025-04-01,2025-04,2025,4,Apr,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,15760.18,EUR
+619,2026-04-01,2026-04,2026,4,Apr,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,15747.82,EUR
+620,2025-05-01,2025-05,2025,5,May,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,16057.63,EUR
+621,2026-05-01,2026-05,2026,5,May,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,16073.99,EUR
+622,2025-06-01,2025-06,2025,6,Jun,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,16194.39,EUR
+623,2026-06-01,2026-06,2026,6,Jun,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,16240.1,EUR
+624,2025-07-01,2025-07,2025,7,Jul,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,17016.09,EUR
+625,2026-07-01,2026-07,2026,7,Jul,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,17094.81,EUR
+626,2025-08-01,2025-08,2025,8,Aug,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,18521.64,EUR
+627,2026-08-01,2026-08,2026,8,Aug,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,18640.74,EUR
+628,2025-09-01,2025-09,2025,9,Sep,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,20474.75,EUR
+629,2026-09-01,2026-09,2026,9,Sep,IT,Italy,PARTNER,Partner Sales,IND,Industrial Solutions,20643.33,EUR
+630,2025-01-01,2025-01,2025,1,Jan,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,8105.24,EUR
+631,2026-01-01,2026-01,2026,1,Jan,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,8003.01,EUR
+632,2025-02-01,2025-02,2025,2,Feb,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,8408.76,EUR
+633,2026-02-01,2026-02,2026,2,Feb,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,8333.05,EUR
+634,2025-03-01,2025-03,2025,3,Mar,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,8986.86,EUR
+635,2026-03-01,2026-03,2026,3,Mar,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,8938.36,EUR
+636,2025-04-01,2025-04,2025,4,Apr,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9362.48,EUR
+637,2026-04-01,2026-04,2026,4,Apr,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9328.84,EUR
+638,2025-05-01,2025-05,2025,5,May,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9540.12,EUR
+639,2026-05-01,2026-05,2026,5,May,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9523.04,EUR
+640,2025-06-01,2025-06,2025,6,Jun,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9622.3,EUR
+641,2026-06-01,2026-06,2026,6,Jun,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9622.42,EUR
+642,2025-07-01,2025-07,2025,7,Jul,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9915.14,EUR
+643,2026-07-01,2026-07,2026,7,Jul,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,9933.15,EUR
+644,2025-08-01,2025-08,2025,8,Aug,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,10583.8,EUR
+645,2026-08-01,2026-08,2026,8,Aug,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,10622.11,EUR
+646,2025-09-01,2025-09,2025,9,Sep,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,11589.48,EUR
+647,2026-09-01,2026-09,2026,9,Sep,IT,Italy,PARTNER,Partner Sales,SVC,Services & Support,11652.34,EUR
