@@ -1,0 +1,45 @@
+{
+  "id": "com.custom.discovery",
+  "version": "0.8.7",
+  "name": "DISCOVERY for SAP BW Live",
+  "description": "Deterministic SAP BW Live analytical application foundation with a dedicated hero entry experience, animated hero analytics visual, strict guided ASK grammar, Growth ranking, full live-result grouping visibility with aligned completed-period comparisons, aligned YoY logic across Discover, Ask and Geo, automatic local Geo maps, period vs cumulative time-series views, and total/subtotal protection. No external AI service, telemetry, map service, writeback or persistence.",
+  "newInstancePrefix": "Discovery",
+  "icon": "",
+  "vendor": "Custom",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-discovery",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {},
+  "dataBindings": {
+    "discoveryData": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "BW KPI Measures (one or more)",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "time",
+          "description": "BW Time Characteristic - 0CALDAY or 0CALMONTH",
+          "type": "dimension"
+        },
+        {
+          "id": "dimensions",
+          "description": "BW Analysis Dimensions to scan for material findings",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {}
+}

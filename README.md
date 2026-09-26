@@ -12,6 +12,7 @@ These projects are independent community projects and are not official SAP produ
 
 | Widget | Version | Description |
 |---|---:|---|
+| [DISCOVERY](discovery/) | BETA 1.0 | Deterministic SAP BW Live analytical application foundation with Discover, guided ASK, aligned YoY, charts, tables, and local country maps |
 | [Executive Pulse](executive-pulse/) | 4.0.0 | Deterministic narrative widget for KPI variance analysis and contributor ranking |
 | [Hierarchy Pulse](hierarchy-pulse/) | 1.1.1 | BW Live hierarchy variance visualization with native parent child reconstruction, persistent selectable layout, and branch/product inspection |
 | [WHY](why/) | 1.0.0 | Deterministic variance signal analysis that groups overlapping evidence and shows where to inspect first |
@@ -24,6 +25,18 @@ Each widget is self-contained in its own folder.
 
 ```text
 sac-custom-widgets/
+├── discovery/
+│   ├── discovery-v0.8.7.json
+│   ├── main.js
+│   ├── discovery-v0.8.7.zip
+│   ├── README.md
+│   ├── CHANGELOG.md
+│   ├── LICENSE
+│   └── docs/
+│       ├── ARCHITECTURE.md
+│       ├── ASK-GRAMMAR.md
+│       ├── TEST-CHECKLIST.md
+│       └── TIME-LOGIC.md
 ├── executive-pulse/
 │   ├── index.json
 │   ├── main.js
