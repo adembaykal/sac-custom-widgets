@@ -15,6 +15,7 @@ These projects are independent community projects and are not official SAP produ
 | [DISCOVERY](discovery/) | BETA 1.0 | Deterministic SAP BW Live analytical application foundation with Discover, guided ASK, aligned YoY, charts, tables, and local country maps |
 | [UNFOLD](unfold/) | 0.5.5 | Keynote-style analytical journey from one KPI to executive overview, focused analysis, comparison, guided story and SAP Live Data Binding |
 | [Executive Pulse](executive-pulse/) | 4.0.0 | Deterministic narrative widget for KPI variance analysis and contributor ranking |
+| [Impact Ripple](impact-ripple/) | 1.0.0 | Animated KPI ripple analysis across three configurable rings |
 | [Hierarchy Pulse](hierarchy-pulse/) | 1.1.1 | BW Live hierarchy variance visualization with native parent child reconstruction, persistent selectable layout, and branch/product inspection |
 | [WHY](why/) | 1.0.0 | Deterministic variance signal analysis that groups overlapping evidence and shows where to inspect first |
 
@@ -51,6 +52,13 @@ sac-custom-widgets/
 │   ├── styling.js
 │   ├── executive-pulse.zip
 │   └── README.md
+├── impact-ripple/
+│   ├── index.json
+│   ├── main.js
+│   ├── impact-ripple.zip
+│   ├── impact-ripple-preview.png
+│   ├── README.md
+│   └── LICENSE
 ├── hierarchy-pulse/
 │   ├── hierarchy-pulse.json
 │   ├── main.js
