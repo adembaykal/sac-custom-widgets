@@ -4,7 +4,7 @@
 
 UNFOLD is an SAP Analytics Cloud Custom Widget experiment that turns a single KPI into a staged analytical experience. It starts with one signal, unfolds into an executive overview, supports focused analysis and comparison, expands into a multi-view analytical experience, and can fold back into the original KPI.
 
-**Version:** 0.5.4  
+**Version:** 0.5.5  
 **Status:** Community release
 
 This is an independent community project. It is not an official SAP product, not an SAP-supported component, and does not represent an SAP product commitment.
@@ -19,6 +19,7 @@ The current build includes:
 - subtle positive, negative and neutral signal pulse
 - embedded Demo Mode
 - SAP Live Mode through SAC Data Binding
+- SAP Live measure unit and currency display when the bound result provides one unambiguous unit
 - explicit Live Ready screen and manual refresh before live data is loaded
 - multiple measures and analysis dimensions
 - current vs previous period comparison
@@ -49,8 +50,8 @@ UNFOLD is designed as a full analytical experience rather than a small dashboard
 
 ## Files
 
-- `UNFOLD-v0.5.4.json` - Custom Widget descriptor
-- `UNFOLD-v0.5.4.zip` - widget package containing `main.js` at ZIP root
+- `UNFOLD-v0.5.5.json` - Custom Widget descriptor
+- `UNFOLD-v0.5.5.zip` - widget package containing `main.js` at ZIP root
 - `main.js` - source
 - `README.md` - setup and behavior
 - `CHANGELOG.md` - release history
@@ -89,6 +90,12 @@ The descriptor exposes one binding named `liveData` with three feeds.
 Bind one or more measures.
 
 The first available measure becomes the initial Hero KPI. Additional measures can be selected inside the analytical experience.
+
+### Units and currencies
+
+In SAP Live Mode, UNFOLD reads measure units or currencies from the bound result when SAC provides them.
+
+When a measure resolves to one unambiguous unit, the unit is carried into KPI and analytical value formatting, for example `76.1K EUR`. If the result contains no unit or contains mixed units for the same measure, UNFOLD does not invent one.
 
 ### Time Dimension
 
@@ -212,6 +219,7 @@ Before using a new build, test the relevant mode and data combination, including
 - initial Hero reveal and unfold transition
 - Live Ready refresh
 - multiple measures
+- SAP Live unit or currency display for monetary and unit-bearing measures
 - `0VTYPE` Actual, Plan and Forecast comparisons
 - filters
 - map zoom, pan, reset and city markers

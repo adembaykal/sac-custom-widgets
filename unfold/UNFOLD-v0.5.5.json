@@ -1,0 +1,45 @@
+{
+  "id": "com.custom.unfold",
+  "version": "0.5.5",
+  "name": "UNFOLD",
+  "description": "Executive SAP Analytics Cloud Custom Widget showcase. One KPI is staged like a keynote reveal and smoothly unfolds into a connected executive overview, opens focused KPI analysis, expands into a multi-tab analytical experience, and folds back into the original signal. Demo Mode includes a deterministic embedded showcase dataset. SAP Live Mode loads only after an explicit refresh, uses the bound SAC result set, supports multiple measures, time and semantic analysis dimensions, zoomable country-first local geography with optional tooltip-based city markers, automatic BW 0VTYPE detection for Actual (10), Plan (20) and Forecast (30) comparisons, deterministic Explain this view summaries, two-tile Compare Spotlight, Guided Story Mode, cleaner country structure analysis, and spotlight focus views. SAP Live measure units and currencies returned by the data binding are carried into KPI and analytical value formatting when a single unambiguous unit is available. No separate 0VTYPE binding feed is required. No AI, backend, writeback or persistence.",
+  "newInstancePrefix": "UNFOLD",
+  "icon": "",
+  "vendor": "Custom",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-unfold",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {},
+  "dataBindings": {
+    "liveData": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "SAP Live Measures (one or more)",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "time",
+          "description": "Time Dimension (optional, recommended for comparison and trend)",
+          "type": "dimension"
+        },
+        {
+          "id": "dimensions",
+          "description": "Analysis Dimensions (one or more, include 0VTYPE here for Actual / Plan / Forecast comparisons)",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {}
+}

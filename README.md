@@ -13,7 +13,7 @@ These projects are independent community projects and are not official SAP produ
 | Widget | Version | Description |
 |---|---:|---|
 | [DISCOVERY](discovery/) | BETA 1.0 | Deterministic SAP BW Live analytical application foundation with Discover, guided ASK, aligned YoY, charts, tables, and local country maps |
-| [UNFOLD](unfold/) | 0.5.4 | Keynote-style analytical journey from one KPI to executive overview, focused analysis, comparison, guided story and SAP Live Data Binding |
+| [UNFOLD](unfold/) | 0.5.5 | Keynote-style analytical journey from one KPI to executive overview, focused analysis, comparison, guided story and SAP Live Data Binding |
 | [Executive Pulse](executive-pulse/) | 4.0.0 | Deterministic narrative widget for KPI variance analysis and contributor ranking |
 | [Hierarchy Pulse](hierarchy-pulse/) | 1.1.1 | BW Live hierarchy variance visualization with native parent child reconstruction, persistent selectable layout, and branch/product inspection |
 | [WHY](why/) | 1.0.0 | Deterministic variance signal analysis that groups overlapping evidence and shows where to inspect first |
@@ -39,9 +39,9 @@ sac-custom-widgets/
 │       ├── TEST-CHECKLIST.md
 │       └── TIME-LOGIC.md
 ├── unfold/
-│   ├── UNFOLD-v0.5.4.json
+│   ├── UNFOLD-v0.5.5.json
 │   ├── main.js
-│   ├── UNFOLD-v0.5.4.zip
+│   ├── UNFOLD-v0.5.5.zip
 │   ├── README.md
 │   ├── CHANGELOG.md
 │   └── LICENSE

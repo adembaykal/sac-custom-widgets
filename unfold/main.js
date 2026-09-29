@@ -402,12 +402,41 @@
     return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (paths[name] || paths.grid) + '</svg>';
   }
 
+  function liveCellFormatted(cell) {
+    if (cell == null || typeof cell !== 'object') return '';
+    if (cell.formattedValue != null && cell.formattedValue !== '') return String(cell.formattedValue);
+    if (cell.formatted != null && cell.formatted !== '') return String(cell.formatted);
+    return '';
+  }
+
+  function unitText(value) {
+    if (value == null) return '';
+    if (typeof value === 'object') {
+      if (value.label != null && value.label !== '') return String(value.label).trim();
+      if (value.id != null && value.id !== '') return String(value.id).trim();
+      if (value.description != null && value.description !== '') return String(value.description).trim();
+      return '';
+    }
+    return String(value).trim();
+  }
+
+  function liveCellUnit(cell) {
+    if (cell == null || typeof cell !== 'object') return '';
+    var candidates = [cell.unit, cell.currency, cell.unitOfMeasure, cell.unitOfMeasureId, cell.currencyUnit];
+    for (var i = 0; i < candidates.length; i++) {
+      var u = unitText(candidates[i]);
+      if (u) return u;
+    }
+    return '';
+  }
+
   function liveCellLabel(cell) {
     if (cell == null) return '';
     if (typeof cell !== 'object') return String(cell);
     if (cell.label != null && cell.label !== '') return String(cell.label);
     if (cell.description != null && cell.description !== '') return String(cell.description);
-    if (cell.formattedValue != null && cell.formattedValue !== '') return String(cell.formattedValue);
+    var formatted = liveCellFormatted(cell);
+    if (formatted) return formatted;
     if (cell.id != null) return String(cell.id);
     return '';
   }
@@ -3012,7 +3041,9 @@
       if(!Number.isFinite(value))return 'n/a';
       var m=this._liveModel&&this._liveModel.measures.find(function(x){return x.alias===key;});
       if(m&&m.isPercent)return value.toFixed(1)+'%';
-      return formatCompact(value,1);
+      var formatted=formatCompact(value,1);
+      if(m&&m.unit&&!m.mixedUnit)return formatted+' '+m.unit;
+      return formatted;
     }
 
     _formatSignalChange(key,change) {
@@ -3251,8 +3282,20 @@
       var measures=measureAliases.map(function(a){
         var m=meta.mainStructureMembers&&meta.mainStructureMembers[a]||{};
         var first=binding.data.find(function(r){return r[a]!=null;});
-        var sample=first&&first[a]&&first[a].formattedValue||'';
-        return {alias:a,id:m.id||'',label:m.label||m.description||m.id||a,isPercent:String(sample).indexOf('%')>=0};
+        var sampleCell=first&&first[a]||null;
+        var sample=liveCellFormatted(sampleCell);
+        var units=[];
+        binding.data.forEach(function(r){
+          var u=liveCellUnit(r&&r[a]);
+          if(u&&units.indexOf(u)<0)units.push(u);
+        });
+        if(!units.length){
+          var metaUnit=unitText(m.unit||m.currency||m.unitOfMeasure||m.unitOfMeasureId||m.currencyUnit);
+          if(metaUnit)units.push(metaUnit);
+        }
+        var unit=units.length===1?units[0]:'';
+        var isPercent=unit==='%'||String(unit).toUpperCase()==='PERCENT'||String(sample).indexOf('%')>=0;
+        return {alias:a,id:m.id||'',label:m.label||m.description||m.id||a,isPercent:isPercent,unit:unit,mixedUnit:units.length>1};
       });
 
       var allAliases=uniq(dimAliases);

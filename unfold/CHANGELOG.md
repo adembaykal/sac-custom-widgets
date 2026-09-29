@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.5
+
+- added SAP Live measure unit and currency extraction from bound result cells, with metadata fallback
+- carries one unambiguous unit into live KPI and analytical value formatting, for example `76.1K EUR`
+- avoids inventing a unit when none is returned and suppresses unit display for mixed-unit measures
+- validated with the SAP BW Live test setup filtered to EUR
+
 ## 0.5.4
 
 - fixed the Hero signal color so it stays semantically correct throughout the unfold transition
