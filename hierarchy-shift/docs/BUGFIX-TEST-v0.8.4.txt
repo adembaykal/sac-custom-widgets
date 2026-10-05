@@ -1,0 +1,32 @@
+Hierarchy SHIFT v0.8.4 focused bugfix test
+
+Bug 1: Refresh must start from BW baseline
+1. Load the Story.
+2. Move several nodes in SHIFT.
+3. Optionally Save Scenario.
+4. Refresh/reload the SAC Story.
+Expected:
+- SHIFT starts from the fresh SAP BW hierarchy baseline.
+- No structural changes are active.
+- Saved scenarios are still listed under Scenarios.
+- A saved scenario is applied only after explicitly clicking Load.
+
+Bug 2: Graphical View edge auto-scroll
+1. Open Graphical View.
+2. Pick a hierarchy node near the upper part of a larger graph.
+3. Drag it toward a valid target below the visible viewport.
+4. Hold the pointer near the bottom edge.
+Expected:
+- The Graphical workspace scrolls downward while the drag remains active.
+- The same works at top, left and right edges.
+- Releasing over a valid node performs the move.
+- Background drag-to-pan still works when no hierarchy node is being dragged.
+- Multi-select drag uses the same edge auto-scroll.
+
+Regression:
+- Compact View edge auto-scroll still works.
+- Save/Load Scenario still works.
+- Undo/Reset still works.
+- Multi-select still works.
+- Dark Mode and UI scale unchanged.
+- Hierarchy reconstruction and KPI calculation logic unchanged.

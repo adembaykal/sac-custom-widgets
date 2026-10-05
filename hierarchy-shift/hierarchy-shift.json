@@ -1,0 +1,58 @@
+{
+  "id": "com.custom.hierarchy_shift",
+  "version": "0.8.4",
+  "name": "Hierarchy SHIFT",
+  "description": "Hierarchy SHIFT, a what-if prototype for controllers using SAP BW Live hierarchies in SAP Analytics Cloud. v0.8.4 fixes two high-priority workflow bugs: a normal SAC refresh now always starts from the fresh BW baseline instead of silently restoring the last transient SHIFT working scenario, and Graphical View drag-and-drop now auto-scrolls at all four workspace edges so nodes can be moved to distant hierarchy targets. Saved scenarios remain available and are applied only after an explicit Load action.",
+  "newInstancePrefix": "HierarchyShift",
+  "icon": "",
+  "vendor": "Custom",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-hierarchy-shift",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "scenarioBookmarkState": {
+      "type": "string",
+      "description": "Deprecated legacy state property. Since v0.8.4 the transient working scenario is not restored automatically. Use SHIFT Saved Scenarios and explicit Load instead.",
+      "default": ""
+    }
+  },
+  "dataBindings": {
+    "hierarchyData": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "KPI Measure",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "time",
+          "description": "Time Dimension",
+          "type": "dimension"
+        },
+        {
+          "id": "hierarchy",
+          "description": "BW Hierarchy Dimension",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {
+    "scenarioSaved": {
+      "description": "Emitted when a local Hierarchy SHIFT scenario bookmark is saved."
+    },
+    "scenarioLoaded": {
+      "description": "Emitted when a saved local Hierarchy SHIFT scenario bookmark is loaded."
+    }
+  }
+}

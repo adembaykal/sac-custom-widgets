@@ -17,6 +17,7 @@ These projects are independent community projects and are not official SAP produ
 | [Executive Pulse](executive-pulse/) | 4.0.0 | Deterministic narrative widget for KPI variance analysis and contributor ranking |
 | [Impact Ripple](impact-ripple/) | 1.0.0 | Animated KPI ripple analysis across three configurable rings |
 | [Hierarchy Pulse](hierarchy-pulse/) | 1.1.1 | BW Live hierarchy variance visualization with native parent child reconstruction, persistent selectable layout, and branch/product inspection |
+| [Hierarchy SHIFT](hierarchy-shift/) | 0.8.4 | Controller-focused SAP BW Live hierarchy what-if prototype with local restructuring, scenario impact, multi-select, Excel export, and no BW writeback |
 | [WHY](why/) | 1.0.0 | Deterministic variance signal analysis that groups overlapping evidence and shows where to inspect first |
 
 ---
@@ -68,6 +69,17 @@ sac-custom-widgets/
 │   └── docs/
 │       ├── ARCHITECTURE.md
 │       └── TEST-CHECKLIST.md
+├── hierarchy-shift/
+│   ├── hierarchy-shift.json
+│   ├── main.js
+│   ├── hierarchy-shift.zip
+│   ├── README.md
+│   ├── CHANGELOG.md
+│   ├── LICENSE
+│   └── docs/
+│       ├── ARCHITECTURE.md
+│       ├── TEST-CHECKLIST.md
+│       └── BUGFIX-TEST-v0.8.4.txt
 ├── why/
 │   ├── why.json
 │   ├── main.js

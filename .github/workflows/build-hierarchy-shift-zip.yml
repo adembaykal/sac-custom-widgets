@@ -1,0 +1,39 @@
+name: Build Hierarchy SHIFT SAC package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "hierarchy-shift/main.js"
+      - "hierarchy-shift/hierarchy-shift.json"
+      - ".github/workflows/build-hierarchy-shift-zip.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build SAC widget ZIP
+        run: |
+          cd hierarchy-shift
+          rm -f hierarchy-shift.zip
+          zip -j hierarchy-shift.zip hierarchy-shift.json main.js
+          unzip -l hierarchy-shift.zip
+
+      - name: Commit package
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hierarchy-shift/hierarchy-shift.zip
+          if git diff --cached --quiet; then
+            echo "Package is already up to date."
+            exit 0
+          fi
+          git commit -m "build(hierarchy-shift): refresh SAC package [skip ci]"
+          git push
