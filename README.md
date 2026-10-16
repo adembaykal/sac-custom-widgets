@@ -12,6 +12,7 @@ These projects are independent community projects and are not official SAP produ
 
 | Widget | Version | Description |
 |---|---:|---|
+| [PERFORMANCE SKYLINE](performance-skyline/) | 0.3.0 | Interactive 2D/3D daily business performance with BW Live, multi-measure dropdown, year guides, and Day Spotlight |
 | [DISCOVERY](discovery/) | BETA 1.0 | Deterministic SAP BW Live analytical application foundation with Discover, guided ASK, aligned YoY, charts, tables, and local country maps |
 | [UNFOLD](unfold/) | 0.5.5 | Keynote-style analytical journey from one KPI to executive overview, focused analysis, comparison, guided story and SAP Live Data Binding |
 | [Executive Pulse](executive-pulse/) | 4.0.0 | Deterministic narrative widget for KPI variance analysis and contributor ranking |
@@ -28,6 +29,19 @@ Each widget is self-contained in its own folder.
 
 ```text
 sac-custom-widgets/
+├── performance-skyline/
+│   ├── skyline.json
+│   ├── skyline.zip
+│   ├── main.js
+│   ├── README.md
+│   ├── CHANGELOG.md
+│   ├── LICENSE
+│   ├── docs/
+│   │   ├── TEST-CHECKLIST.md
+│   │   ├── preview_revenue.jpg
+│   │   └── preview_spotlight.jpg
+│   └── tests/
+│       └── smoke.test.js
 ├── discovery/
 │   ├── discovery-v0.8.7.json
 │   ├── main.js

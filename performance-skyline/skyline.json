@@ -1,0 +1,66 @@
+{
+  "id": "com.custom.sac.performanceskyline",
+  "version": "0.3.0",
+  "name": "PERFORMANCE SKYLINE",
+  "description": "Executive business performance skyline: 2D/3D animated daily view with year guides, multi-measure selection, and Day Spotlight. Signed additive BW Live data, currency-aware KPIs, accessible high-contrast blue interface.",
+  "newInstancePrefix": "PERFORMANCE SKYLINE",
+  "vendor": "Custom",
+  "icon": "",
+  "supportsMobile": false,
+  "supportsExport": false,
+  "supportsBookmark": false,
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-custom-sac-performanceskyline",
+      "url": "/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "default": "PERFORMANCE SKYLINE",
+      "description": "Widget title"
+    },
+    "unitLabel": {
+      "type": "string",
+      "default": "",
+      "description": "Display unit override (e.g. EUR). Leave empty to detect currency or unit from bound SAC measure metadata or formatted values."
+    },
+    "palette": {
+      "type": "string",
+      "default": "azure",
+      "description": "Executive blue palette: azure, ocean, frost, indigo, steel"
+    },
+    "weekStart": {
+      "type": "number",
+      "default": 1,
+      "description": "Start of week: 1 = Monday, 0 = Sunday"
+    },
+    "measureLabel": {
+      "type": "string",
+      "default": "",
+      "description": "Optional measure label override; blank uses SAC measure label (e.g. Gross Revenue)"
+    }
+  },
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "measures",
+          "description": "One or more additive numeric measures (Revenue, Costs, Quantity), including signed values; do not bind percentages or ratios.",
+          "type": "mainStructureMember"
+        },
+        {
+          "id": "dimensions",
+          "description": "Daily Date Dimension (one date dimension, e.g. 0CALDAY)",
+          "type": "dimension"
+        }
+      ]
+    }
+  },
+  "methods": {},
+  "events": {}
+}
