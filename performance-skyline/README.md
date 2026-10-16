@@ -10,13 +10,15 @@ PERFORMANCE SKYLINE is a standalone SAP Analytics Cloud (SAC) Custom Widget. It 
 
 This is an independent community project, not an official SAP product, SAP-supported component, or SAP product commitment.
 
-### Preview (illustrative data)
+### Preview
 
-![3D skyline using illustrative sample data](docs/preview_revenue.jpg)
+![PERFORMANCE SKYLINE in SAP Analytics Cloud, with Profit selected](docs/preview_revenue.jpg)
+
+*PERFORMANCE SKYLINE in an SAP Analytics Cloud Story, showing the Profit (EUR) measure in 3D. The dropdown lets you switch between bound business measures without changing the displayed date window.*
 
 ![Day Spotlight using illustrative sample data](docs/preview_spotlight.jpg)
 
-The screenshots use illustrative test data, not the author's BW Live dataset.
+*Day Spotlight example using illustrative sample data.*
 
 ## What it does
 
